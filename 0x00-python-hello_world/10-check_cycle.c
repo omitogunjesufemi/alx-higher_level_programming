@@ -13,7 +13,7 @@ int check_cycle(listint_t *list)
 
 	flag = 0;
 	if (list == NULL)
-		return (flag)
+		return (flag);
 	if (list->next != NULL)
 	{
 		slow_ptr = list->next;

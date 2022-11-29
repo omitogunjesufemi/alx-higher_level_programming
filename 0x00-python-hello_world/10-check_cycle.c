@@ -12,6 +12,8 @@ int check_cycle(listint_t *list)
 	int flag;
 
 	flag = 0;
+	if (list == NULL)
+		return (flag)
 	if (list->next != NULL)
 	{
 		slow_ptr = list->next;

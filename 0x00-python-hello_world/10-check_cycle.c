@@ -12,19 +12,22 @@ int check_cycle(listint_t *list)
 	int flag;
 
 	flag = 0;
-	slow_ptr = list->next;
-	fast_ptr = (list->next)->next;
-
-	while (fast_ptr != NULL)
+	if (list->next != NULL)
 	{
-		if (slow_ptr == fast_ptr)
-		{
-			flag = 1;
-			return (flag);
-		}
-		slow_ptr = slow_ptr->next;
-		fast_ptr = (fast_ptr->next)->next;
-	}
+		slow_ptr = list->next;
+		fast_ptr = (list->next)->next;
 
+		while (fast_ptr != NULL)
+		{
+			if (slow_ptr == fast_ptr)
+			{
+				flag = 1;
+				return (flag);
+			}
+			slow_ptr = slow_ptr->next;
+			fast_ptr = (fast_ptr->next)->next;
+		}
+		return (flag);
+	}
 	return (flag);
 }

@@ -1,3 +1,3 @@
 #!/usr/bin/python3
-pass
-pass
+from fast_alphabet import fast_alpha
+fast_alpha()

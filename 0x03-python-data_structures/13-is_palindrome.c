@@ -1,7 +1,6 @@
 #include "lists.h"
 
-int total_nodes(listint_t *head);
-listint_t *end_node(listint_t *start);
+listint_t *end_node(listint_t *start, int *total_node);
 listint_t *shift_end_node(listint_t *start, listint_t *end);
 
 /**
@@ -17,8 +16,7 @@ int is_palindrome(listint_t **head)
 	if (*head != NULL)
 	{
 		start = *head;
-		end = end_node(start);
-		total_node = total_nodes(*head);
+		end = end_node(start, &total_node);
 		if (total_node % 2 != 0)
 		{
 			while (start != end)
@@ -66,29 +64,16 @@ listint_t *shift_end_node(listint_t *start, listint_t *end)
  * @start: The starting point
  * Return: the pointer to end node
  */
-listint_t *end_node(listint_t *start)
-{
-	while (start->next != NULL)
-	{
-		start = start->next;
-	}
-	return (start);
-}
-
-/**
- * total_nodes - Get the total number of nodes
- * @head: Pointer to head
- * Return: the pointer to end node
- */
-int total_nodes(listint_t *head)
+listint_t *end_node(listint_t *start, int *total_node)
 {
 	int i;
 
-	i = 0;
-	while (head != NULL)
+	i = 1;
+	while (start->next != NULL)
 	{
+		start = start->next;
 		i++;
-		head = head->next;
 	}
-	return (i);
+	*total_node = i;
+	return (start);
 }

@@ -12,3 +12,4 @@ TASK | DESCRIPTION
 `5-print_string.py` | Print 3 times a string stored in the variable `str` followed by its first 9 characters
 `6-concat.py` | Print a concatenated string
 `7-edges.py` | Cut, Copy, Paste
+`8-concat-edges.py` | Print `object-oriented programming with Python`, followed by a new line.

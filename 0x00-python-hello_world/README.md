@@ -13,3 +13,4 @@ TASK | DESCRIPTION
 `6-concat.py` | Print a concatenated string
 `7-edges.py` | Cut, Copy, Paste
 `8-concat-edges.py` | Print `object-oriented programming with Python`, followed by a new line.
+`9-easter_egg.py` | A Python script that prints “The Zen of Python”, by TimPeters, followed by a new line.

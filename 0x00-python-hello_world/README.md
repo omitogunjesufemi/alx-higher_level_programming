@@ -8,3 +8,4 @@
 | `1-run_inline` | A shell scripts that runs Python code |
 | `2-print.py` | A python script that prints exactly `Programming is like building a multilingual puzzle` |
 | `3-print_number.py` | Print an integer stored in the variable number using f-strings |
+| `4-print_float.py` | Print the floated stored variable `number` with a precision of 2 digits |

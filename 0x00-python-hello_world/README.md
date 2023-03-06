@@ -10,3 +10,4 @@ TASK | DESCRIPTION
 `3-print_number.py` | Print an integer stored in the variable number using f-strings
 `4-print_float.py` | Print the floated stored variable `number` with a precision of 2 digits
 `5-print_string.py` | Print 3 times a string stored in the variable `str` followed by its first 9 characters
+`6-concat.py` | Print a concatenated string

@@ -14,4 +14,5 @@ TASK | DESCRIPTION
 `7-edges.py` | Cut, Copy, Paste
 `8-concat-edges.py` | Print `object-oriented programming with Python`, followed by a new line.
 `9-easter_egg.py` | A Python script that prints “The Zen of Python”, by TimPeters, followed by a new line.
+`100-write.py` | A script that prints without `print` function
 `102-magic_calculation.py` | A function from its Python bytecode

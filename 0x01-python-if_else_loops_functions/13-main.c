@@ -13,11 +13,11 @@ int main(void)
     listint_t *head;
 
     head = NULL;
-    add_nodeint_end(&head, 0);
-    add_nodeint_end(&head, 1);
-    add_nodeint_end(&head, 2);
-    add_nodeint_end(&head, 3);
-    add_nodeint_end(&head, 4);
+    add_nodeint_end(&head, 10);
+    add_nodeint_end(&head, 11);
+    add_nodeint_end(&head, 12);
+    add_nodeint_end(&head, 13);
+    add_nodeint_end(&head, 14);
     add_nodeint_end(&head, 98);
     add_nodeint_end(&head, 402);
     add_nodeint_end(&head, 1024);
@@ -25,7 +25,7 @@ int main(void)
 
     printf("-----------------\n");
 
-    insert_node(&head, 2700);
+    insert_node(&head, 8000);
 
     print_listint(head);
 

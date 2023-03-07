@@ -36,11 +36,13 @@ listint_t *insert_node(listint_t **head, int number)
 			{
 				new->next = curr_ptr;
 				prv_ptr->next = new;
-				return (new);
+				break;
 			}
 			prv_ptr = curr_ptr;
 			curr_ptr = curr_ptr->next;
 		}
+		new->next = curr_ptr;
+		prv_ptr->next = new;
 	}
 	return (new);
 }

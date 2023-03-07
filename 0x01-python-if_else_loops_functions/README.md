@@ -11,3 +11,7 @@ TASK | DESCRIPTION
 `3-print_alphabt.py` | A program that prints the ASCII alphabet, in lowercase without `e` and `q`, not followed by a new line.
 `4-print_hexa.py` | A program that prints all numbers from 0 to 98 in decimal and in hexadecimal.
 `7-islower.py` | A function that checks for lowercase character
+`8-uppercase.py` | A function that prints a string in uppercase followed by a new line.
+`9-print_last_digit.py` | A function that prints the last digit of a number.
+`10-add.py` | A function that adds two integers and returns the result.
+`11-pow.py` | A function that computes `a` to the power of `b` and return the value.

@@ -6,3 +6,8 @@ This project helped to understand the awesomeness of Python programming, why ind
 TASK | DESCRIPTION
 --- | ---
 `0-positive_or_negative.py` | A program that assignsa random signed number to the variable number each time it is executed.
+`1-last_digit.py` | A program that prints the last digit of the number stored in the variable `number`.
+`2-print_alphabet.py` | A program that prints the ASCII alphabet, in lowercase, not followed by a new line.
+`3-print_alphabt.py` | A program that prints the ASCII alphabet, in lowercase without `e` and `q`, not followed by a new line.
+`4-print_hexa.py` | A program that prints all numbers from 0 to 98 in decimal and in hexadecimal.
+`7-islower.py` | A function that checks for lowercase character

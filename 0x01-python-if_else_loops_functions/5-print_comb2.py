@@ -1,10 +1,6 @@
 #!/usr/bin/python3
-i = 0
-j = 0
-while (i < 10):
-    if (i == 9 and j == 9):
-        print("{}{}".format(i, j), end="\n")
+for i in range(0, 100):
+    if i == 99:
+        print("{}".format(i), end="\n")
     else:
-        print("{}{}".format(i, j), end=", ")
-    i = i + 1
-    j = j + 1
+        print("{:02d}".format(i), end=", ")

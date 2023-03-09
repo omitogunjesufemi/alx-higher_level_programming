@@ -10,7 +10,7 @@ def main(args):
     if args_len > 0:
         print("{} argument{}:".format(args_len, ar), end="\n")
         for arg in args:
-            print("{}: {}".format(i, arg), end="\n");
+            print("{}: {}".format(i, arg), end="\n")
             i = i + 1
     else:
         print("0 arguments.")

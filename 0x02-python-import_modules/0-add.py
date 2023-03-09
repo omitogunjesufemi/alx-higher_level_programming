@@ -3,7 +3,9 @@ from add_0 import add
 
 
 def main():
-    print("{} + {} = {}".format(1, 2, add(1, 2)), end="\n")
+    a = 1
+    b = 2
+    print("{:d} + {:d} = {:d}".format(a, b, add(a, b)), end="\n")
 
 
 if __name__ == "__main__":

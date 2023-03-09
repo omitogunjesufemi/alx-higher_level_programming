@@ -26,7 +26,7 @@ def main(argv):
         else:
             print("Unknown operator. Available operators: +, -, * and /")
             sys.exit(1)
-        print("{:d} {} {:d} = {:d}".format(a, operator, b, result), end="\n")
+        print("{:.0f} {} {:.0f} = {:.0f}".format(a, operator, b, result), end="\n")
 
 
 if __name__ == "__main__":

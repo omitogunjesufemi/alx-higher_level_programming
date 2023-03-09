@@ -18,11 +18,11 @@ def main(argv):
         if operator == "+":
             result = a + b
         elif operator == "-":
-            passresult = a - b
+            result = a - b
         elif operator == "*":
-            passresult = a * b
+            result = a * b
         elif operator == "/":
-            passresult = a / b
+            result = a / b
         else:
             print("Unknown operator. Available operators: +, -, * and /")
             sys.exit(1)

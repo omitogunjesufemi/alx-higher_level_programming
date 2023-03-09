@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 def main(argv):
     argv_len = len(argv[1:])
     sum = 0
@@ -11,6 +10,7 @@ def main(argv):
         print(sum)
     else:
         print(0)
+
 
 if __name__ == "__main__":
     import sys

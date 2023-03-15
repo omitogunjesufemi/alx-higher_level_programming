@@ -17,7 +17,9 @@ def roman_to_int(roman_string):
 
     return (sum(solve_list))
 
+
 def not_a_string(string):
+    string = str(string)
     for s in string:
         if s in ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']:
             return 1

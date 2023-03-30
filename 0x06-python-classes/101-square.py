@@ -82,7 +82,7 @@ class Square:
         with the character #, and prints an empty line when size is zero
         """
         if self.__size == 0:
-            print()
+            pass
         for i in range(self.__size):
             if i == 0 and self.__position[1] > 0:
                 for x in range(self.__position[1]):
@@ -98,4 +98,4 @@ class Square:
 
     def __str__(self):
         self.my_print()
-        return ''
+        return 'i'

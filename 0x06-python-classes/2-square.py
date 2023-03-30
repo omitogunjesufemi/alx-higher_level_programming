@@ -12,18 +12,9 @@ class Square:
             __size - private attribute
     """
     def __init__(self, size=0):
-        self.size = size
-
-    @property
-    def size(self):
-        """int: size of the square"""
-        return self.__size
-
-    @size.setter
-    def size(self, value):
-        if type(value) is int:
-            self.__size = value
-        if type(value) is not int:
+        if type(size) is not int:
             raise TypeError("size must be an integer")
-        if value < 0:
+        elif size < 0:
             raise ValueError("size must be >= 0")
+        else:
+            self.__size = size

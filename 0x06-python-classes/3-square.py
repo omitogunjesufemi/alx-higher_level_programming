@@ -11,21 +11,12 @@ class Square:
             __size - prinvate instance attribute
     """
     def __init__(self, size=0):
-        self.size = size
-
-    @property
-    def size(self):
-        """int: size of the square"""
-        return self.__size
-
-    @size.setter
-    def size(self, value):
-        if type(value) is not int:
+        if type(size) is not int:
             raise TypeError("size must be an integer")
-        elif value < 0:
+        elif size < 0:
             raise ValueError("size must be >= 0")
         else:
-            self.__size = value
+            self.__size = size
 
     def area(self):
         """A public instance method that returns the current square area

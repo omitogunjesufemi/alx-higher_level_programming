@@ -95,7 +95,6 @@ class Square:
                 if j == self.__size - 1 and i != self.__size - 1:
                     print()
 
-
     def __str__(self):
         self.my_print()
         return ''

@@ -29,3 +29,6 @@ try:
     my_square.my_print()
 except Exception as e:
     print(e)
+
+my_square = Square(5, (3, 2))
+my_square.my_print()

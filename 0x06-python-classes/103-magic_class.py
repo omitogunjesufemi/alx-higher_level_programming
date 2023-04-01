@@ -1,6 +1,11 @@
 #!/usr/bin/python3
 
-"""This is a module for MagicClass ByteCode -> #Python5
+import math
+
+"""MagicClass ByteCode -> #Python5
+
+This module handles and creates the Magic class which takes a radius value to
+calculate the area and circumference of a circle.
 
 Todo:
     * Instantiate the class with radius with verification if it is float or int

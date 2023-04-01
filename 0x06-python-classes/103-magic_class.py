@@ -1,7 +1,4 @@
 #!/usr/bin/python3
-
-import math
-
 """MagicClass ByteCode -> #Python5
 
 This module handles and creates the Magic class which takes a radius value to
@@ -14,6 +11,8 @@ Arguments:
     * A private instance method: area
     * A private instance method: circumference
 """
+
+import math
 
 class MagicClass:
     """This MagicClass is defined to create a circle with a particular radius

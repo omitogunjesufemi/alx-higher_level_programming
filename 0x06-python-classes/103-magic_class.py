@@ -1,11 +1,11 @@
 #!/usr/bin/python3
 
+"""This import math function into this module"""
 import math
 
 """
 This is a module for MagicClass ByteCode -> #Python5
 """
-
 
 class MagicClass:
     """This MagicClass is defined to create a circle with a particular radius

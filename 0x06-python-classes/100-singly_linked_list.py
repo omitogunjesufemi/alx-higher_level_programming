@@ -62,6 +62,7 @@ class Node:
         else:
             raise TypeError("next_node must be a Node object")
 
+
 class SinglyLinkedList:
     """SinglyLinkedList class which defines a singly linked list by
     private instance attribute head (having no setter or getter)
@@ -81,38 +82,41 @@ class SinglyLinkedList:
         """
         new_node = Node(value)
         head_ptr = self.__head
-        if head_ptr == None:
+
+        if head_ptr is None:
             self.__head = new_node
             head_ptr = self.__head
             return None
 
         prev_ptr = None
-        #This iterates over the entire linked list
-        while head_ptr.next_node != None:
+        # This iterates over the entire linked list
+        while head_ptr.next_node is not None:
             if head_ptr.data > value:
                 break
             prev_ptr = head_ptr
             head_ptr = head_ptr.next_node
 
-        #When the position to be replace is at index 0
+        # When the position to be replace is at index 0
         if head_ptr.data > value and prev_ptr is None:
             new_node.next_node = head_ptr
             self.__head = new_node
 
-        #When the position to be replace is at any index but 0 or -1
+        # When the position to be replace is at any index but 0 or -1
         elif head_ptr.data > value and prev_ptr is not None:
             prev_ptr.next_node = new_node
             new_node.next_node = head_ptr
 
-        #When the position to be replace is at index -1, i.e last
+        # When the position to be replace is at index -1, i.e last
         else:
             head_ptr.next_node = new_node
 
     def __str__(self):
         head_ptr = self.__head
-        while head_ptr.next_node != None:
+        if head_ptr is None:
+            return ""
+        while head_ptr.next_node is not None:
             val = head_ptr.data
             print("{}".format(val))
             head_ptr = head_ptr.next_node
-        #This returns the last data to be printed
+        # This returns the last data to be printed
         return "{}".format(head_ptr.data)

@@ -1,14 +1,23 @@
 #!/usr/bin/python3
 
-"""This import math function into this module"""
+"""This import math function into this module
+
+Todo:
+    * Get the pi value from math library
+"""
 import math
 
-"""
-This is a module for MagicClass ByteCode -> #Python5
+
+"""This is a module for MagicClass ByteCode -> #Python5
 
 Todo:
     * Instantiate the class with radius with verification if it is float or int
+Arguments:
+    * A private instance field: radius
+    * A private instance method: area
+    * A private instance method: circumference
 """
+
 
 class MagicClass:
     """This MagicClass is defined to create a circle with a particular radius

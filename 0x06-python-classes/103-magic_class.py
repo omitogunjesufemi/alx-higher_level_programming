@@ -5,6 +5,9 @@ import math
 
 """
 This is a module for MagicClass ByteCode -> #Python5
+
+Todo:
+    * Instantiate the class with radius with verification if it is float or int
 """
 
 class MagicClass:

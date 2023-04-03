@@ -1,0 +1,53 @@
+Test cases
+
+Correct items
+=============
+
+     >>> Rectangle = __import__('1-rectangle').Rectangle
+     >>> my_rectangle = Rectangle(2, 4)
+     >>> print(sorted(my_rectangle.__dict__.items()))
+     [('_Rectangle__height', 4), ('_Rectangle__width', 2)]
+
+Empty items
+===========
+
+     >>> my_rectangle = Rectangle()
+     >>> print(sorted(my_rectangle.__dict__.items()))
+     [('_Rectangle__height', 0), ('_Rectangle__width', 0)]
+
+
+Non-numbers
+===========
+
+     >>> my_rectangle = Rectangle('', 4)
+     Traceback (most recent call last):
+         ...
+     TypeError: width must be an integer
+
+     >>> my_rectangle = Rectangle(2.0, 4.0)
+     Traceback (most recent call last):
+         ...
+     TypeError: width must be an integer
+
+     >>> my_rectangle = Rectangle(2, '')
+     Traceback (most recent call last):
+         ...
+     TypeError: height must be an integer
+
+     >>> my_rectangle = Rectangle(None)
+     Traceback (most recent call last):
+         ...
+     TypeError: width must be an integer
+
+
+Negative Numbers
+================
+
+     >>> my_rectangle = Rectangle(-1, 4)
+     Traceback (most recent call last):
+         ...
+     ValueError: width must be >= 0
+     >>> my_rectangle = Rectangle(2, -1)
+     Traceback (most recent call last):
+         ...
+     ValueError: height must be >= 0

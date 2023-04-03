@@ -7,5 +7,5 @@ print("Area: {} - Perimeter: {}".format(my_rectangle.area(), my_rectangle.perime
 print("--")
 
 my_rectangle.width = 0
-my_rectangle.height = -9
+my_rectangle.height = 10
 print("Area: {} - Perimeter: {}".format(my_rectangle.area(), my_rectangle.perimeter()))

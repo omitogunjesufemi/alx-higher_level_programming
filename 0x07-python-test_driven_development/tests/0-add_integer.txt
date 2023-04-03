@@ -1,0 +1,46 @@
+============================
+ Adds two integers together
+============================
+Importing the function itself:
+	  >>> add_integer = __import__('0-add_integer').add_integer
+
+Using Integer
+=============
+	>>> add_integer(1, 2)
+	3
+
+	>>> add_integer(100, -2)
+	98
+
+	>>> add_integer(2)
+	100
+
+Using Floats
+============
+	>>> add_integer(100.3, -2)
+	98
+
+	>>> add_integer(10.3, 4.3)
+	14
+
+Using Types aside floats and int
+================================
+
+Using strings
+=============
+	>>> add_integer(4, 'school')
+	Traceback (most recent call last):
+	    ...
+	TypeError: b must be an integer
+
+
+	>>> add_integer('school')
+	Traceback (most recent call last):
+	    ...
+	TypeError: a must be an integer
+
+
+	>>> add_integer([1], (2,))
+	Traceback (most recent call last):
+	    ...
+	TypeError: a must be an integer

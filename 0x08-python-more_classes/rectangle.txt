@@ -3,7 +3,7 @@ Test cases
 Correct items
 =============
 
-     >>> Rectangle = __import__('1-rectangle').Rectangle
+     >>> Rectangle = __import__('2-rectangle').Rectangle
      >>> my_rectangle = Rectangle(2, 4)
      >>> print(sorted(my_rectangle.__dict__.items()))
      [('_Rectangle__height', 4), ('_Rectangle__width', 2)]

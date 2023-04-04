@@ -1,0 +1,34 @@
+================================================================
+ A function that prints ``My name is <first_name> <last_name>``
+================================================================
+Importing the function itself:
+
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+Using Strings
+=============
+	>>> say_my_name("John", "Smith")
+	My name is John Smith
+
+	>>> say_my_name("Jesufemi", "Omitogun")
+	My name is Jesufemi Omitogun
+
+	>>> say_my_name("John")
+	My name is John 
+
+Using Non-strings
+=================
+	>>> say_my_name(12, "Smith")
+	Traceback (most recent call last):
+	    ...
+	TypeError: first_name must be a string
+
+	>>> say_my_name("Jesufemi", 17)
+	Traceback (most recent call last):
+	    ...
+	TypeError: last_name must be a string
+
+Passing no arguments
+====================
+	>>> say_my_name()
+	My name is  

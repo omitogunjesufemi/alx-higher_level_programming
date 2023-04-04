@@ -50,7 +50,7 @@ class Rectangle:
         """Returns the height of the rectangle"""
         return self.__height
 
-    @width.setter
+    @height.setter
     def height(self, value):
         """Sets the height to a particular value
 
@@ -77,11 +77,14 @@ class Rectangle:
         return 2 * (self.__width + self.__height)
 
     def __str__(self):
+        if self.__width == 0 or self.__height == 0:
+            return ""
         for i in range(self.__height):
             for j in range(self.__width):
-                print("#", end="")
-            print("\n")
-        return ""
-
-    def __repr__(self):
-        return type(self)
+                if j == self.__width - 1 and i == self.__height - 1:
+                    print("#", end="")
+                elif j == self.__width - 1:
+                    print("#")
+                else:
+                    print("#", end="")
+        return str()

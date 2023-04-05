@@ -2,6 +2,7 @@
 """This module is a LockedClass with no class or object attributes
 """
 
+
 class LockedClass:
     """LockedClass with no class or object attribute.
     """

@@ -68,6 +68,6 @@ void print_python_bytes(PyObject *p)
 	else
 	{
 		printf("[.] bytes object info\n");
-		printf("  [EROOR] Invalid Bytes Object\n");
+		printf("  [ERROR] Invalid Bytes Object\n");
 	}
 }

@@ -1,0 +1,43 @@
+++++++++++++++++++++++++++++++++++++++++++++
+    Prints the list in ascending order
+++++++++++++++++++++++++++++++++++++++++++++
+
+Import module
++++++++++++++
+	>>> MyList = __import__('1-my_list').MyList
+
+
+Order for Integers
+++++++++++++++++++
+	>>> my_list = MyList()
+	>>> my_list.append(1)
+	>>> my_list.append(4)
+	>>> my_list.append(2)
+	>>> my_list.append(3)
+	>>> my_list.append(5)
+	>>> print(my_list)
+	[1, 4, 2, 3, 5]
+
+	>>> my_list.print_sorted()
+	[1, 2, 3, 4, 5]
+
+	>>> print(my_list)
+	[1, 4, 2, 3, 5]
+
+
+Order for Signed Integers
++++++++++++++++++++++++++
+	>>> my_list = MyList()
+	>>> my_list.append(-1)
+	>>> my_list.append(-7)
+	>>> my_list.append(0)
+	>>> my_list.append(12)
+	>>> my_list.append(9)
+	>>> print(my_list)
+	[-1, -7, 0, 12, 9]
+
+	>>> my_list.print_sorted()
+	[-7, -1, 0, 9, 12]
+
+	>>> print(my_list)
+	[-1, -7, 0, 12, 9]

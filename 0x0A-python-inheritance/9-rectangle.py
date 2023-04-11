@@ -21,6 +21,6 @@ class Rectangle(BaseGeometry):
         return "[Rectangle] {}/{}".format(self.__width, self.__height)
 
     def area(self):
-        """Public instance method that raises an Exception
+        """Public instance method that returns area of the shape
         """
         return (self.__width * self.__height)

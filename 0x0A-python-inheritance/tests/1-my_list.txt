@@ -41,3 +41,29 @@ Order for Signed Integers
 
 	>>> print(my_list)
 	[-1, -7, 0, 12, 9]
+
+
+Order for Empty List
++++++++++++++++++++++++++
+	>>> my_list = MyList()
+	>>> print(my_list)
+	[]
+
+	>>> my_list.print_sorted()
+	[]
+
+	>>> print(my_list)
+	[]
+
+
+Order for Empty List
+++++++++++++++++++++++
+	>>> my_list = MyList()
+	>>> print(my_list)
+	[]
+
+	>>> my_list.print_sorted()
+	[]
+
+	>>> print(my_list)
+	[]

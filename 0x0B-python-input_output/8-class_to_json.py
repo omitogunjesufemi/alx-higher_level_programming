@@ -3,7 +3,6 @@
 simple data structure (list, dictionary, string, integer and boolean) for JSON
 serialization of an object
 """
-import json
 
 
 def class_to_json(obj):
@@ -11,5 +10,4 @@ def class_to_json(obj):
     structure (list, dictionary, string, integer and boolean) for JSON
     serialization of an object
     """
-    json_rep = json.dumps(obj.__dict__)
-    return json_rep
+    return obj.__dict__

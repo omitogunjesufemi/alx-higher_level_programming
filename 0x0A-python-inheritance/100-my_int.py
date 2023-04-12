@@ -10,6 +10,11 @@ class MyInt(int):
     It contains magic methods implemented with it
     __eq__, and __ne__
     """
+    def __new__(self, value):
+        """Creates a new instance
+        """
+        return super().__new__(self, value)
+
     def __init__(self, value):
         """Initialises the class
         """
@@ -18,9 +23,9 @@ class MyInt(int):
     def __eq__(self, other):
         """Magic methods for ==
         """
-        return (self != other)
+        return (self.value != other)
 
     def __ne__(self, other):
         """Magic methods for !=
         """
-        return (self.value == other.value)
+        return (self.value == other)

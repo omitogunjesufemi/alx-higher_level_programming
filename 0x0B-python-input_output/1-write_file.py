@@ -13,4 +13,6 @@ def write_file(filename="", text=""):
     """
     with open(filename, "w", encoding="utf-8") as f:
         character_count = f.write(text)
-        return character_count - 1
+        if text == "":
+            return 0
+        return character_count

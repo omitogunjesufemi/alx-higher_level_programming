@@ -14,4 +14,5 @@ def read_file(filename=""):
     """
     with open(filename, "r", encoding="utf-8") as a_file:
         file_content = a_file.read()
-        print(file_content.strip("\n"))
+        if file_content != "":
+            print(file_content.strip("\n"))

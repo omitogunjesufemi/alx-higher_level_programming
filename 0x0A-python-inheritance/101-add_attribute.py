@@ -11,6 +11,8 @@ def add_attribute(class_name, attribute_name, attribute_value):
     Raise a TypeError exception, with the message can't add new
     attribute if the object can’t have new attribute
     """
+    if "slots" in dir(class_name):
+        raise TypeError("can't add new attribute")
     if type(class_name) in [list, int, bool, float, str,
                             dict, tuple, range, complex, set,
                             bytearray, bytes, memoryview]:

@@ -13,7 +13,7 @@ while count < 10:
 
         splitted_input = line.split()
 
-        if dictionary.get(splitted_input[7]) == None:
+        if dictionary.get(splitted_input[7]) is None:
             dictionary[splitted_input[7]] = 1
         else:
             dictionary[splitted_input[7]] = (dictionary[splitted_input[7]] + 1)
@@ -28,4 +28,4 @@ while count < 10:
         print("File size: {}".format(total_file_size))
         for key, value in sorted(dictionary.items()):
             print("{}: {}".format(key, value))
-        count  = 0
+        count = 0

@@ -151,14 +151,30 @@ class TestRectangleClass(unittest.TestCase):
     def test_rectangle_display(self):
         """Test Rectangle Display
         """
-        buff = io.StringIO()
-        sys.stdout = buff
+        buff_1 = io.StringIO()
+        buff_2 = io.StringIO()
+        buff_3 = io.StringIO()
 
+        sys.stdout = buff_1
         self.rectangle_1.display()
-        output = buff.getvalue()
+        output_1 = buff_1.getvalue()
+
+        sys.stdout = buff_2
+        self.rectangle_2.display()
+        output_2 = buff_2.getvalue()
+
+        sys.stdout = buff_3
+        self.rectangle_3.display()
+        output_3 = buff_3.getvalue()
 
         sys.stdout = sys.__stdout__
 
-        expected_output = "##########\n##########\n"
+        expected_output_1 = "##########\n##########\n"
+        expected_output_2 =("##\n##\n##\n##\n##\n##\n##\n##\n"
+            "##\n##\n##\n##\n##\n##\n##\n##\n##\n##\n##\n##\n")
+        expected_output_3 = ("##########\n##########\n"
+                             "##########\n##########\n##########\n")
 
-        self.assertEqual(output, expected_output)
+        self.assertEqual(output_1, expected_output_1)
+        self.assertEqual(output_2, expected_output_2)
+        self.assertEqual(output_3, expected_output_3)

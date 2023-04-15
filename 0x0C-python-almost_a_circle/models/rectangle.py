@@ -102,3 +102,8 @@ class Rectangle(Base):
         the character #
         """
         for row in range(self.__height):
+            for col in range(self.__width):
+                if col == self.__width - 1:
+                    print("#", end="\n")
+                else:
+                    print("#", end="")

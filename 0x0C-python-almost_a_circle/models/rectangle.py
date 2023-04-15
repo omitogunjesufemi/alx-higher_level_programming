@@ -107,3 +107,11 @@ class Rectangle(Base):
                     print("#", end="\n")
                 else:
                     print("#", end="")
+
+    def __str__(self):
+        """Rectangle class implementation
+        """
+        return "[{}] ({}) {}/{} - {}/{}".format(self.__class__.__name__,
+                                                self.id, self.x,
+                                                self.y, self.width,
+                                                self.height)

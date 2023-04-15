@@ -15,7 +15,7 @@ class TestRectangleClass(unittest.TestCase):
         """This sets up the rectangle class
         """
         self.rectangle_1 = Rectangle(10, 2)
-        self.rectangle_2 = Rectangle(2, 20)
+        self.rectangle_2 = Rectangle(2, 20, 1, 3)
         self.rectangle_3 = Rectangle(10, 5, 0, 0, 12)
 
     def tearDown(self):
@@ -178,3 +178,14 @@ class TestRectangleClass(unittest.TestCase):
         self.assertEqual(output_1, expected_output_1)
         self.assertEqual(output_2, expected_output_2)
         self.assertEqual(output_3, expected_output_3)
+
+    def test_rectangle_string_output(self):
+        """Test __str__ method
+        """
+        expected_output_1 = "[Rectangle] (15) 0/0 - 10/2"
+        expected_output_2 = "[Rectangle] (16) 1/3 - 2/20"
+        expected_output_3 = "[Rectangle] (12) 0/0 - 10/5"
+
+        self.assertEqual(self.rectangle_1.__str__(), expected_output_1)
+        self.assertEqual(self.rectangle_2.__str__(), expected_output_2)
+        self.assertEqual(self.rectangle_3.__str__(), expected_output_3)

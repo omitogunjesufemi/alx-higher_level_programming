@@ -81,8 +81,12 @@ class TestRectangleClass(unittest.TestCase):
         """
         with self.assertRaises(TypeError):
             self.rectangle_1.height = "32"
+        with self.assertRaises(TypeError):
             self.rectangle_1.height = ["32", 12]
+        with self.assertRaises(TypeError):
             self.rectangle_2.height = (12)
+
+            
             self.rectangle_2.height = {width: 12}
             self.rectangle_3.height = {}
             self.rectangle_3.height = 12.0
@@ -92,10 +96,15 @@ class TestRectangleClass(unittest.TestCase):
         """
         with self.assertRaises(TypeError):
             self.rectangle_1.x = "32"
+        with self.assertRaises(TypeError):
             self.rectangle_1.x = ["32", 12]
+        with self.assertRaises(TypeError):
             self.rectangle_2.x = (12)
+        with self.assertRaises(TypeError):
             self.rectangle_2.x = {width: 12}
+        with self.assertRaises(TypeError):
             self.rectangle_3.x = {}
+        with self.assertRaises(TypeError):
             self.rectangle_3.x = 12.0
 
     def test_rectangle_y_position_is_not_int(self):
@@ -114,7 +123,9 @@ class TestRectangleClass(unittest.TestCase):
         """
         with self.assertRaises(ValueError):
             self.rectangle_1.width = 0
+        with self.assertRaises(ValueError):
             self.rectangle_2.width = -12
+        with self.assertRaises(ValueError):
             self.rectangle_3.width = -32
 
     def test_rectangle_height_less_or_equal_zero(self):
@@ -122,7 +133,9 @@ class TestRectangleClass(unittest.TestCase):
         """
         with self.assertRaises(ValueError):
             self.rectangle_1.height = 0
+        with self.assertRaises(ValueError):
             self.rectangle_2.height = -12
+        with self.assertRaises(ValueError):
             self.rectangle_3.height = -32
 
     def test_rectangle_x_less_than_zero(self):
@@ -130,7 +143,9 @@ class TestRectangleClass(unittest.TestCase):
         """
         with self.assertRaises(ValueError):
             self.rectangle_1.x = -1
+        with self.assertRaises(ValueError):
             self.rectangle_2.x = -12
+        with self.assertRaises(ValueError):
             self.rectangle_3.x = -34
 
     def test_rectangle_y_less_than_zero(self):
@@ -138,7 +153,9 @@ class TestRectangleClass(unittest.TestCase):
         """
         with self.assertRaises(ValueError):
             self.rectangle_1.y = -1
+        with self.assertRaises(ValueError):
             self.rectangle_2.y = -12
+        with self.assertRaises(ValueError):
             self.rectangle_3.y = -34
 
     def test_rectangle_area(self):
@@ -191,3 +208,21 @@ class TestRectangleClass(unittest.TestCase):
         self.assertEqual(self.rectangle_1.__str__(), expected_output_1)
         self.assertEqual(self.rectangle_2.__str__(), expected_output_2)
         self.assertEqual(self.rectangle_3.__str__(), expected_output_3)
+
+    def test_rectangle_update_method(self):
+        """Test update method works properly
+        """
+        self.rectangle_1.update(89)
+        self.rectangle_1.update(89, 2, 3)
+        self.rectangle_1.update(89, 2, 3, 4)
+        self.rectangle_1.update(89, 2, 3, 4, 5)
+        self.assertEqual(self.rectangle_1.id, 89)
+        self.assertEqual(self.rectangle_1.width, 2)
+        self.assertEqual(self.rectangle_1.height, 3)
+        self.assertEqual(self.rectangle_1.x, 4)
+        self.assertEqual(self.rectangle_1.y, 5)
+
+    def test_rectangle_update_raise_exception(self):
+        """Raise TypeError Exception
+        """
+        with self.assertRaises(TypeError):

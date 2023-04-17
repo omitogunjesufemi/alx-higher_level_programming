@@ -120,19 +120,24 @@ class Rectangle(Base):
                                                 self.y, self.width,
                                                 self.height)
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """Update the Rectangle class
         """
-        for i in range(len(args)):
-            if i == 0:
-                self.id = args[0]
-            elif i == 1:
-                self.width = args[1]
-            elif i == 2:
-                self.height = args[2]
-            elif i == 3:
-                self.x = args[3]
-            elif i == 4:
-                self.y = args[4]
-            else:
-                pass
+        if args is not None and len(args) != 0:
+            for i in range(len(args)):
+                if i == 0:
+                    self.id = args[0]
+                elif i == 1:
+                    self.width = args[1]
+                elif i == 2:
+                    self.height = args[2]
+                elif i == 3:
+                    self.x = args[3]
+                elif i == 4:
+                    self.y = args[4]
+                else:
+                    pass
+        else:
+            for key, value in kwargs.items():
+                if hasattr(self, key):
+                    setattr(self, key, value)

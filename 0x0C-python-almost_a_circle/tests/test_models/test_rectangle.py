@@ -70,10 +70,13 @@ class TestRectangleClass(unittest.TestCase):
         """
         with self.assertRaises(TypeError):
             self.rectangle_1.width = "32"
+        with self.assertRaises(TypeError):
             self.rectangle_1.width = ["32", 12]
-            self.rectangle_2.width = (12)
-            self.rectangle_2.width = {width: 12}
+        with self.assertRaises(TypeError):
+            self.rectangle_2.width = (12,)
+        with self.assertRaises(TypeError):
             self.rectangle_3.width = {}
+        with self.assertRaises(TypeError):
             self.rectangle_3.width = 12.0
 
     def test_rectangle_height_is_not_int(self):
@@ -84,11 +87,10 @@ class TestRectangleClass(unittest.TestCase):
         with self.assertRaises(TypeError):
             self.rectangle_1.height = ["32", 12]
         with self.assertRaises(TypeError):
-            self.rectangle_2.height = (12)
-
-            
-            self.rectangle_2.height = {width: 12}
+            self.rectangle_2.height = (12,)
+        with self.assertRaises(TypeError):
             self.rectangle_3.height = {}
+        with self.assertRaises(TypeError):
             self.rectangle_3.height = 12.0
 
     def test_rectangle_x_position_is_not_int(self):
@@ -99,9 +101,7 @@ class TestRectangleClass(unittest.TestCase):
         with self.assertRaises(TypeError):
             self.rectangle_1.x = ["32", 12]
         with self.assertRaises(TypeError):
-            self.rectangle_2.x = (12)
-        with self.assertRaises(TypeError):
-            self.rectangle_2.x = {width: 12}
+            self.rectangle_2.x = (12,)
         with self.assertRaises(TypeError):
             self.rectangle_3.x = {}
         with self.assertRaises(TypeError):
@@ -112,10 +112,13 @@ class TestRectangleClass(unittest.TestCase):
         """
         with self.assertRaises(TypeError):
             self.rectangle_1.y = "32"
+        with self.assertRaises(TypeError):
             self.rectangle_1.y = ["32", 12]
-            self.rectangle_2.y = (12)
-            self.rectangle_2.y = {width: 12}
+        with self.assertRaises(TypeError):
+            self.rectangle_2.y = (12,)
+        with self.assertRaises(TypeError):
             self.rectangle_3.y = {}
+        with self.assertRaises(TypeError):
             self.rectangle_3.y = 12.0
 
     def test_rectangle_width_less_or_equal_zero(self):
@@ -222,7 +225,42 @@ class TestRectangleClass(unittest.TestCase):
         self.assertEqual(self.rectangle_1.x, 4)
         self.assertEqual(self.rectangle_1.y, 5)
 
-    def test_rectangle_update_raise_exception(self):
-        """Raise TypeError Exception
+    def test_rectangle_update_args_not_empty(self):
+        """Test update method with a non-empty
         """
-        with self.assertRaises(TypeError):
+        args = (90, 2, 3, 4, 5)
+        self.rectangle_2.update(*args, width=1, height=1, id=100)
+        self.assertEqual(self.rectangle_2.id, 90)
+        self.assertEqual(self.rectangle_2.width, 2)
+        self.assertEqual(self.rectangle_2.height, 3)
+        self.assertEqual(self.rectangle_2.x, 4)
+        self.assertEqual(self.rectangle_2.y, 5)
+
+    def test_rectangle_update_args_empty(self):
+        """Test update method with a empty args
+        """
+        args = ()
+        self.rectangle_3.update(*args, width=4, height=7)
+        self.assertEqual(self.rectangle_3.width, 4)
+        self.assertEqual(self.rectangle_3.height, 7)
+        self.assertEqual(self.rectangle_3.id, 12)
+
+    def test_rectangle_update_more_than_expected_args(self):
+        """
+        """
+        args = (90, 2, 3, 4, 5, 7)
+        self.rectangle_2.update(*args, width=1, height=1, id=100)
+        self.assertEqual(self.rectangle_2.id, 90)
+        self.assertEqual(self.rectangle_2.width, 2)
+        self.assertEqual(self.rectangle_2.height, 3)
+        self.assertEqual(self.rectangle_2.x, 4)
+        self.assertEqual(self.rectangle_2.y, 5)
+
+    def test_rectangle_update_wrong_kwargs(self):
+        """Test update method with attr not in object
+        """
+        args = ()
+        self.rectangle_3.update(width=4, height=7, value=10)
+        self.assertEqual(self.rectangle_3.width, 4)
+        self.assertEqual(self.rectangle_3.height, 7)
+        self.assertEqual(self.rectangle_3.id, 12)

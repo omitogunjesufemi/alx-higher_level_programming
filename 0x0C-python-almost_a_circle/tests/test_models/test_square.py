@@ -248,3 +248,41 @@ class TestSquareClass(unittest.TestCase):
         self.assertEqual(output_1, expected_output_1)
         self.assertEqual(output_2, expected_output_2)
         self.assertEqual(output_3, expected_output_3)
+
+    def test_square_size_is_int(self):
+        """Check if size is an instance of int
+        """
+        self.assertTrue(isinstance(self.square_1.size, int))
+        self.assertTrue(isinstance(self.square_2.size, int))
+        self.assertTrue(isinstance(self.square_3.size, int))
+
+    def test_square_width_is_expected_value(self):
+        """Check size is the expected value of width
+        """
+        self.assertEqual(self.square_1.size, 5)
+        self.assertEqual(self.square_2.size, 2)
+        self.assertEqual(self.square_3.size, 4)
+
+    def test_square_size_is_not_int(self):
+        """TypeError is raised when size is not an integer
+        """
+        with self.assertRaises(TypeError):
+            self.square_1.size = "32"
+        with self.assertRaises(TypeError):
+            self.square_1.size = ["32", 12]
+        with self.assertRaises(TypeError):
+            self.square_2.size = (12,)
+        with self.assertRaises(TypeError):
+            self.square_3.size = {}
+        with self.assertRaises(TypeError):
+            self.square_3.size = 12.0
+
+    def test_square_size_less_or_equal_zero(self):
+        """ValueError is raised when it is <= 0
+        """
+        with self.assertRaises(ValueError):
+            self.square_1.size = 0
+        with self.assertRaises(ValueError):
+            self.square_2.size = -12
+        with self.assertRaises(ValueError):
+            self.square_3.size = -32

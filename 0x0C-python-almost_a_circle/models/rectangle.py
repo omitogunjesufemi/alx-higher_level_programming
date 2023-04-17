@@ -103,7 +103,7 @@ class Rectangle(Base):
         """
         for row in range(self.__height):
             if self.__y != 0 and row == 0:
-                    print("\n" * self.__y, end="")
+                print("\n" * self.__y, end="")
             for col in range(self.__width):
                 if self.__x != 0 and col == 0:
                     print(" " * self.__x, end="")

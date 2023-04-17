@@ -18,5 +18,5 @@ class Square(Rectangle):
         """Square class implementation
         """
         return "[{}] ({}) {}/{} - {}".format(self.__class__.__name__,
-                                                self.id, self.x,
-                                                self.y, self.width)
+                                             self.id, self.x,
+                                             self.y, self.width)

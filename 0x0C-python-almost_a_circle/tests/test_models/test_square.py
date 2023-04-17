@@ -242,7 +242,7 @@ class TestSquareClass(unittest.TestCase):
         sys.stdout = sys.__stdout__
 
         expected_output_1 = "#####\n#####\n#####\n#####\n#####\n"
-        expected_output_2 =("\n\n\n ##\n ##\n")
+        expected_output_2 = ("\n\n\n ##\n ##\n")
         expected_output_3 = ("####\n####\n####\n####\n")
 
         self.assertEqual(output_1, expected_output_1)

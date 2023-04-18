@@ -334,3 +334,22 @@ class TestSquareClass(unittest.TestCase):
         self.square_3.update(x=4, height=7, value=10)
         self.assertEqual(self.square_3.x, 4)
         self.assertEqual(self.square_3.id, 12)
+
+    def test_square_to_dictionary_method_returns_dictionary(self):
+        """Test if to_dictionary() returns a dictionary
+        """
+        self.assertTrue(type(self.square_1.to_dictionary()) is dict)
+        self.assertTrue(type(self.square_2.to_dictionary()) is dict)
+        self.assertTrue(type(self.square_3.to_dictionary()) is dict)
+
+    def test_square_to_dictionary_method_give_expected_output(self):
+        """Test if to_dictionary() method gives the expected
+        dictionary values
+        """
+        output_1 = {'id': 1, 'size': 5, 'x': 0, 'y': 0}
+        output_2 = {'id': 2, 'size': 2, 'x': 1, 'y': 3}
+        output_3 = {'id': 12, 'size': 4, 'x': 0, 'y': 0}
+
+        self.assertEqual(self.square_1.to_dictionary(), output_1)
+        self.assertEqual(self.square_2.to_dictionary(), output_2)
+        self.assertEqual(self.square_3.to_dictionary(), output_3)

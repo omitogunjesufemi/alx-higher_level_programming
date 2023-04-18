@@ -46,7 +46,7 @@ class Base:
         instance = cls.__name__
         filename = instance + ".json"
 
-        with open(filename, "w") as json_file:
+        with open(filename, "w", encoding="utf-8") as json_file:
             if list_objs is None or len(list_objs) == 0:
                 json_file.write("[]")
             else:
@@ -76,12 +76,28 @@ class Base:
     def create(cls, **dictionary):
         """This returns an instance with all attributes already set
         """
-        if cls.__name__ == "Rectangle":
-            rectangle = cls(1, 1)
-            rectangle.update(**dictionary)
-            return (rectangle)
+        instance = cls(1, 1)
+        instance.update(**dictionary)
+        return (instance)
 
-        elif cls.__name__ == "Square":
-            square = cls(1)
-            square.update(**dictionary)
-            return (square)
+    @classmethod
+    def load_from_file(cls):
+        """This returns a list of instances from a file
+
+        The file name must be: <Class name>.json - example Rectangle.json
+
+        If the file doesn't exist, return an empty list
+        Othwerwise return a list of instances - the type of these instances
+        depends on cls - current class using the method
+        """
+        filename = cls.__name__ + ".json"
+        instance_list = []
+
+        with open(filename, "r", encoding="utf-8") as from_file:
+            json_string = from_file.read()
+            dict_json = Base.from_json_string(json_string.strip('\n'))
+
+        for item in dict_json:
+            instance_list.append(cls.create(**item))
+
+        return instance_list

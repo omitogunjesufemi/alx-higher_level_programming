@@ -395,3 +395,19 @@ class TestRectangleClass(unittest.TestCase):
         self.assertEqual(rect_5.height, dict_5["height"])
         self.assertEqual(rect_5.x, dict_5["x"])
         self.assertEqual(rect_5.y, dict_5["y"])
+
+    def test_rectangle_load_from_file_returns_instance_list(self):
+        """This test loads from a file
+        """
+        r1 = Rectangle(10, 7, 2, 8, 9)
+        r2 = Rectangle(2, 4, 0, 0, 10)
+
+        Rectangle.save_to_file([r1, r2])
+        instance_list = Rectangle.load_from_file()
+
+        self.assertEqual(r1.id, instance_list[0].id)
+        self.assertEqual(r1.width, instance_list[0].width)
+        self.assertEqual(r1.height, instance_list[0].height)
+        self.assertEqual(r2.id, instance_list[1].id)
+        self.assertEqual(r2.width, instance_list[1].width)
+        self.assertEqual(r2.height, instance_list[1].height)

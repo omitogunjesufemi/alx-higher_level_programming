@@ -16,6 +16,9 @@ class TestSquareClass(unittest.TestCase):
         self.square_1 = Square(5, 0, 0, 1)
         self.square_2 = Square(2, 1, 3, 2)
         self.square_3 = Square(4, 0, 0, 12)
+        self.square_4 = Square(1)
+        self.square_5 = Square(1, 2)
+        self.square_6 = Square(1, 2, 3)
 
     def tearDown(self):
         """Tears down the setup
@@ -119,6 +122,8 @@ class TestSquareClass(unittest.TestCase):
             self.square_3.width = {}
         with self.assertRaises(TypeError):
             self.square_3.width = 12.0
+        with self.assertRaises(TypeError):
+            Square("1")
 
     def test_square_height_is_not_int(self):
         """TypeError is raised when it is not an integer
@@ -133,6 +138,8 @@ class TestSquareClass(unittest.TestCase):
             self.square_3.height = {}
         with self.assertRaises(TypeError):
             self.square_3.height = 12.0
+        with self.assertRaises(TypeError):
+            Square("1")
 
     def test_square_x_position_is_not_int(self):
         """TypeError is raised when it is not an integer
@@ -147,6 +154,8 @@ class TestSquareClass(unittest.TestCase):
             self.square_3.x = {}
         with self.assertRaises(TypeError):
             self.square_3.x = 12.0
+        with self.assertRaises(TypeError):
+            Square(1, "2")
 
     def test_square_y_position_is_not_int(self):
         """TypeError is raised when it is not an integer
@@ -161,6 +170,8 @@ class TestSquareClass(unittest.TestCase):
             self.square_3.y = {}
         with self.assertRaises(TypeError):
             self.square_3.y = 12.0
+        with self.assertRaises(TypeError):
+            Square(1, 2, "3")
 
     def test_square_width_less_or_equal_zero(self):
         """ValueError is raised when it is <= 0
@@ -171,6 +182,8 @@ class TestSquareClass(unittest.TestCase):
             self.square_2.width = -12
         with self.assertRaises(ValueError):
             self.square_3.width = -32
+        with self.assertRaises(ValueError):
+            Square(-1)
 
     def test_square_height_less_or_equal_zero(self):
         """ValueError is raised when it is <= 0
@@ -181,6 +194,8 @@ class TestSquareClass(unittest.TestCase):
             self.square_2.height = -12
         with self.assertRaises(ValueError):
             self.square_3.height = -32
+        with self.assertRaises(ValueError):
+            Square(-1)
 
     def test_square_x_less_than_zero(self):
         """ValueError is raised when it is < 0
@@ -191,6 +206,8 @@ class TestSquareClass(unittest.TestCase):
             self.square_2.x = -12
         with self.assertRaises(ValueError):
             self.square_3.x = -34
+        with self.assertRaises(ValueError):
+            Square(1, -2)
 
     def test_square_y_less_than_zero(self):
         """ValueError is raised when it is < 0
@@ -201,6 +218,8 @@ class TestSquareClass(unittest.TestCase):
             self.square_2.y = -12
         with self.assertRaises(ValueError):
             self.square_3.y = -34
+        with self.assertRaises(ValueError):
+            Square(1, 2, -3)
 
     def test_square_string_output(self):
         """Test __str__ method
@@ -434,3 +453,16 @@ class TestSquareClass(unittest.TestCase):
         self.assertEqual(sqr_4.size, dict_4["size"])
         self.assertEqual(sqr_4.x, dict_4["x"])
         self.assertEqual(sqr_4.y, dict_4["y"])
+
+    def test_square_load_from_file_returns_instance_list(self):
+        """This test loads from a file for a square
+        """
+        r1 = Square(10, 7, 2, 8)
+        r2 = Square(2, 4, 0, 9)
+        Square.save_to_file([r1, r2])
+        instance_list = Square.load_from_file()
+
+        self.assertEqual(r1.id, instance_list[0].id)
+        self.assertEqual(r1.size, instance_list[0].size)
+        self.assertEqual(r2.id, instance_list[1].id)
+        self.assertEqual(r2.size, instance_list[1].size)

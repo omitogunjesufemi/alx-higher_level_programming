@@ -26,6 +26,7 @@ class Base:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
 
+    @staticmethod
     def to_json_string(list_dictionaries):
         """JSON is one of the standard formats for sharing
         data representation.
@@ -37,3 +38,9 @@ class Base:
             return "[]"
         json_str = json.dumps(list_dictionaries)
         return json_str
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        """This writes the JSON string representation of list_objs to a file
+        """
+        filename = ""

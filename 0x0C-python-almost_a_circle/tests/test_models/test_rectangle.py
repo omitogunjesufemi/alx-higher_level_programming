@@ -361,3 +361,37 @@ class TestRectangleClass(unittest.TestCase):
         output = Rectangle.from_json_string(json_input)
         self.assertEqual([{'id': 89, 'width': 10, 'height': 4},
                           {'id': 7, 'width': 1, 'height': 7}], output)
+
+    def test_rectangle_create_with_None_parameter(self):
+        """Check that create method  works
+        """
+        dict_1 = {'id': 1}
+        rect_1 = Rectangle.create(**dict_1)
+
+        dict_2 = {'id': 2, 'width': 10}
+        rect_2 = Rectangle.create(**dict_2)
+
+        dict_3 = {'id': 3, 'width': 10, 'height': 7}
+        rect_3 = Rectangle.create(**dict_3)
+
+        dict_4 = {'id': 3, 'width': 10, 'height': 7, 'x': 9}
+        rect_4 = Rectangle.create(**dict_4)
+
+        dict_5 = {'id': 3, 'width': 10, 'height': 7, 'x': 9, 'y': 8}
+        rect_5 = Rectangle.create(**dict_5)
+
+        self.assertEqual(rect_1.id, dict_1["id"])
+        self.assertEqual(rect_2.id, dict_2["id"])
+        self.assertEqual(rect_2.width, dict_2["width"])
+        self.assertEqual(rect_3.id, dict_3["id"])
+        self.assertEqual(rect_3.width, dict_3["width"])
+        self.assertEqual(rect_3.height, dict_3["height"])
+        self.assertEqual(rect_4.id, dict_4["id"])
+        self.assertEqual(rect_4.width, dict_4["width"])
+        self.assertEqual(rect_4.height, dict_4["height"])
+        self.assertEqual(rect_4.x, dict_4["x"])
+        self.assertEqual(rect_5.id, dict_5["id"])
+        self.assertEqual(rect_5.width, dict_5["width"])
+        self.assertEqual(rect_5.height, dict_5["height"])
+        self.assertEqual(rect_5.x, dict_5["x"])
+        self.assertEqual(rect_5.y, dict_5["y"])

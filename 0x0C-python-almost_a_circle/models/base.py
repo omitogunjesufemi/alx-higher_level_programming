@@ -71,3 +71,17 @@ class Base:
 
         json_rep = json.loads(json_string)
         return (json_rep)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """This returns an instance with all attributes already set
+        """
+        if cls.__name__ == "Rectangle":
+            rectangle = cls(1, 1)
+            rectangle.update(**dictionary)
+            return (rectangle)
+
+        elif cls.__name__ == "Square":
+            square = cls(1)
+            square.update(**dictionary)
+            return (square)

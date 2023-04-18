@@ -408,3 +408,29 @@ class TestSquareClass(unittest.TestCase):
         output = Square.from_json_string(json_input)
         self.assertEqual([{'id': 89, 'width': 10, 'height': 4},
                           {'id': 7, 'width': 1, 'height': 7}], output)
+
+    def test_square_create_with_None_parameter(self):
+        """Check that create method  works
+        """
+        dict_1 = {'id': 1}
+        sqr_1 = Square.create(**dict_1)
+
+        dict_2 = {'id': 2, 'size': 10}
+        sqr_2 = Square.create(**dict_2)
+
+        dict_3 = {'id': 3, 'size': 10, 'x': 7}
+        sqr_3 = Square.create(**dict_3)
+
+        dict_4 = {'id': 3, 'size': 10, 'x': 7, 'y': 9}
+        sqr_4 = Square.create(**dict_4)
+
+        self.assertEqual(sqr_1.id, dict_1["id"])
+        self.assertEqual(sqr_2.id, dict_2["id"])
+        self.assertEqual(sqr_2.size, dict_2["size"])
+        self.assertEqual(sqr_3.id, dict_3["id"])
+        self.assertEqual(sqr_3.size, dict_3["size"])
+        self.assertEqual(sqr_3.x, dict_3["x"])
+        self.assertEqual(sqr_4.id, dict_4["id"])
+        self.assertEqual(sqr_4.size, dict_4["size"])
+        self.assertEqual(sqr_4.x, dict_4["x"])
+        self.assertEqual(sqr_4.y, dict_4["y"])

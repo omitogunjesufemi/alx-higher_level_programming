@@ -353,3 +353,37 @@ class TestSquareClass(unittest.TestCase):
         self.assertEqual(self.square_1.to_dictionary(), output_1)
         self.assertEqual(self.square_2.to_dictionary(), output_2)
         self.assertEqual(self.square_3.to_dictionary(), output_3)
+
+    def test_square_save_empty_list_for_None_parameter(self):
+        """Check it saves an empty file for No parameter
+        """
+        Square.save_to_file(None)
+
+        with open("Square.json", "r") as json_file:
+            output = json_file.read()
+
+        self.assertEqual("[]", output.strip("\n"))
+
+    def test_square_save_empty_list_for_empty_list_param(self):
+        """Check it saves an empty file for an empty parameter
+        """
+        Square.save_to_file([])
+
+        with open("Square.json", "r") as json_file:
+            output = json_file.read()
+
+        self.assertEqual("[]", output.strip("\n"))
+
+    def test_square_save_to_file_with_appropriate_params(self):
+        """Check it saves an empty file for an empty parameter
+        """
+        r1 = Square(10, 7, 2, 8)
+        r2 = Square(2, 4, 0, 9)
+        Square.save_to_file([r1, r2])
+
+        with open("Square.json", "r") as json_file:
+            output = json_file.read()
+
+        self.assertEqual("[{\"id\": 8, \"size\": 10, \"x\": 7,"
+                         "\"y\": 2}, {\"id\": 9, \"size\": 2, \"x\": 4, "
+                         "\"y\": 0}]", output.strip("\n"))

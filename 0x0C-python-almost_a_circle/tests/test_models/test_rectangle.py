@@ -10,13 +10,25 @@ from models.rectangle import Rectangle
 class TestRectangleClass(unittest.TestCase):
     """Test Cases for the Rectangle Class
     """
-
     def setUp(self):
         """This sets up the rectangle class
         """
         self.rectangle_1 = Rectangle(10, 2, 0, 0, 1)
         self.rectangle_2 = Rectangle(2, 20, 1, 3, 2)
         self.rectangle_3 = Rectangle(10, 5, 0, 0, 12)
+        self.rectangle_4 = Rectangle(1, 2)
+        self.rectangle_5 = Rectangle(1, 2, 3)
+        self.rectangle_6 = Rectangle(1, 2, 3, 4)
+        self.rectangle_7 = Rectangle("1", 2)
+        self.rectangle_8 = Rectangle(1, "2")
+        self.rectangle_9 = Rectangle(1, 2, "3")
+        self.rectangle_10 = Rectangle(1, 2, 3, "4")
+        self.rectangle_11 = Rectangle(-1, 2)
+        self.rectangle_12 = Rectangle(1, -2)
+        self.rectangle_13 = Rectangle(0, 2)
+        self.rectangle_14 = Rectangle(1, 0)
+        self.rectangle_15 = Rectangle(1, 2, -3)
+        self.rectangle_16 = Rectangle(1, 2, 3, -4)
 
     def tearDown(self):
         """Tears down the setup
@@ -283,3 +295,38 @@ class TestRectangleClass(unittest.TestCase):
         self.assertEqual(self.rectangle_1.to_dictionary(), output_1)
         self.assertEqual(self.rectangle_2.to_dictionary(), output_2)
         self.assertEqual(self.rectangle_3.to_dictionary(), output_3)
+
+    def test_rectangle_save_empty_list_for_None_parameter(self):
+        """Check it saves an empty file for No parameter
+        """
+        Rectangle.save_to_file(None)
+
+        with open("Rectangle.json", "r") as json_file:
+            output = json_file.read()
+
+        self.assertEqual("[]", output.strip("\n"))
+
+    def test_rectangle_save_empty_list_for_empty_list_param(self):
+        """Check it saves an empty file for an empty parameter
+        """
+        Rectangle.save_to_file([])
+
+        with open("Rectangle.json", "r") as json_file:
+            output = json_file.read()
+
+        self.assertEqual("[]", output.strip("\n"))
+
+    def test_rectangle_save_to_file_with_appropriate_params(self):
+        """Check it saves an empty file for an empty parameter
+        """
+        r1 = Rectangle(10, 7, 2, 8, 9)
+        r2 = Rectangle(2, 4, 0, 0, 10)
+        Rectangle.save_to_file([r1, r2])
+
+        with open("Rectangle.json", "r") as json_file:
+            output = json_file.read()
+
+        self.assertEqual("[{\"id\": 9, \"width\": 10, \"height\": 7, "
+                         "\"x\": 2, \"y\": 8}, "
+                         "{\"id\": 10, \"width\": 2, \"height\": 4, "
+                         "\"x\": 0, \"y\": 0}]", output.strip("\n"))

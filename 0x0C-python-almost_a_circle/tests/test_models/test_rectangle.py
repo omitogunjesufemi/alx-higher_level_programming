@@ -264,3 +264,22 @@ class TestRectangleClass(unittest.TestCase):
         self.assertEqual(self.rectangle_3.width, 4)
         self.assertEqual(self.rectangle_3.height, 7)
         self.assertEqual(self.rectangle_3.id, 12)
+
+    def test_rectangle_to_dictionary_method_returns_dictionary(self):
+        """Test if to_dictionary() returns a dictionary
+        """
+        self.assertTrue(type(self.rectangle_1.to_dictionary()) is dict)
+        self.assertTrue(type(self.rectangle_2.to_dictionary()) is dict)
+        self.assertTrue(type(self.rectangle_3.to_dictionary()) is dict)
+
+    def test_rectangle_to_dictionary_method_give_expected_output(self):
+        """Test if to_dictionary() method gives the expected
+        dictionary values
+        """
+        output_1 = {'id': 1, 'width': 10, 'height': 2, 'x': 0, 'y': 0}
+        output_2 = {'id': 2, 'width': 2, 'height': 20, 'x': 1, 'y': 3}
+        output_3 = {'id': 12, 'width': 10, 'height': 5, 'x': 0, 'y': 0}
+
+        self.assertEqual(self.rectangle_1.to_dictionary(), output_1)
+        self.assertEqual(self.rectangle_2.to_dictionary(), output_2)
+        self.assertEqual(self.rectangle_3.to_dictionary(), output_3)

@@ -141,3 +141,15 @@ class Rectangle(Base):
             for key, value in kwargs.items():
                 if hasattr(self, key):
                     setattr(self, key, value)
+
+    def to_dictionary(self):
+        """It returns the dictionary representation of a Rectangle
+        """
+        rect_dict = self.__dict__
+        new_rect_dict = {}
+
+        for key, value in rect_dict.items():
+            if key.startswith("_"):
+                key = key.lstrip("_Rectangle__")
+            new_rect_dict[key] = value
+        return (new_rect_dict)

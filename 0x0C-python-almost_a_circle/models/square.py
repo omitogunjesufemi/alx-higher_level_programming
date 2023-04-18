@@ -7,6 +7,9 @@ from models.base import Base
 
 class Square(Rectangle):
     """Square Class inherits from Rectangle class
+
+    Attributes:
+        size: size of the square
     """
     def __init__(self, size=0, x=0, y=0, id=None):
         """Initialises the Square
@@ -32,3 +35,23 @@ class Square(Rectangle):
         """This is a getter for Square size
         """
         self.width = size
+
+    def update(self, *args, **kwargs):
+        """Update the Rectangle class
+        """
+        if args is not None and len(args) != 0:
+            for i in range(len(args)):
+                if i == 0:
+                    self.id = args[0]
+                elif i == 1:
+                    self.size = args[1]
+                elif i == 2:
+                    self.x = args[2]
+                elif i == 3:
+                    self.y = args[3]
+                else:
+                    pass
+        else:
+            for key, value in kwargs.items():
+                if hasattr(self, key):
+                    setattr(self, key, value)

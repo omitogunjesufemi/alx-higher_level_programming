@@ -286,3 +286,51 @@ class TestSquareClass(unittest.TestCase):
             self.square_2.size = -12
         with self.assertRaises(ValueError):
             self.square_3.size = -32
+
+    def test_square_update_method(self):
+        """Test Square update method works properly
+        """
+        self.square_1.update(10)
+        self.square_1.update(10, 2)
+        self.square_1.update(10, 2, 3)
+        self.square_1.update(10, 2, 3, 4)
+        self.assertEqual(self.square_1.id, 10)
+        self.assertEqual(self.square_1.size, 2)
+        self.assertEqual(self.square_1.x, 3)
+        self.assertEqual(self.square_1.y, 4)
+
+    def test_square_update_args_not_empty(self):
+        """Test Square update method with a non-empty args
+        """
+        args = (90, 2, 3, 4)
+        self.square_2.update(*args, size=1, y=1, id=100)
+        self.assertEqual(self.square_2.id, 90)
+        self.assertEqual(self.square_2.size, 2)
+        self.assertEqual(self.square_2.x, 3)
+        self.assertEqual(self.square_2.y, 4)
+
+    def test_square_update_args_empty(self):
+        """Test Square update method with a empty args
+        """
+        args = ()
+        self.square_3.update(*args, sizze=4, id=7)
+        self.assertEqual(self.square_3.size, 4)
+        self.assertEqual(self.square_3.id, 7)
+
+    def test_square_update_more_than_expected_args(self):
+        """
+        """
+        args = (90, 2, 3, 4, 5, 7)
+        self.square_2.update(*args, size=1, x=1, id=100)
+        self.assertEqual(self.square_2.id, 90)
+        self.assertEqual(self.square_2.size, 2)
+        self.assertEqual(self.square_2.x, 3)
+        self.assertEqual(self.square_2.y, 4)
+
+    def test_square_update_wrong_kwargs(self):
+        """Test update method with attr not in object
+        """
+        args = ()
+        self.square_3.update(x=4, height=7, value=10)
+        self.assertEqual(self.square_3.x, 4)
+        self.assertEqual(self.square_3.id, 12)

@@ -48,7 +48,11 @@ class Base:
 
         with open(filename, "w") as json_file:
             if list_objs is None or len(list_objs) == 0:
-                #save an empt list
-                pass
+                json_file.write("[]")
             else:
-                pass
+                new_obj_list = []
+                for instance in list_objs:
+                    dict_instance = instance.to_dictionary()
+                    new_obj_list.append(dict_instance)
+                json_string = Base.to_json_string(new_obj_list)
+                json_file.write(json_string)

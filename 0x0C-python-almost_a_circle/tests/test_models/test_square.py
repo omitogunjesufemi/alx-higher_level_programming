@@ -384,6 +384,6 @@ class TestSquareClass(unittest.TestCase):
         with open("Square.json", "r") as json_file:
             output = json_file.read()
 
-        self.assertEqual("[{\"id\": 8, \"size\": 10, \"x\": 7,"
+        self.assertEqual("[{\"id\": 8, \"size\": 10, \"x\": 7, "
                          "\"y\": 2}, {\"id\": 9, \"size\": 2, \"x\": 4, "
                          "\"y\": 0}]", output.strip("\n"))

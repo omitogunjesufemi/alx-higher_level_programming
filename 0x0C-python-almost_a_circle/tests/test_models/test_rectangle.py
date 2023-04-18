@@ -19,16 +19,6 @@ class TestRectangleClass(unittest.TestCase):
         self.rectangle_4 = Rectangle(1, 2)
         self.rectangle_5 = Rectangle(1, 2, 3)
         self.rectangle_6 = Rectangle(1, 2, 3, 4)
-        self.rectangle_7 = Rectangle("1", 2)
-        self.rectangle_8 = Rectangle(1, "2")
-        self.rectangle_9 = Rectangle(1, 2, "3")
-        self.rectangle_10 = Rectangle(1, 2, 3, "4")
-        self.rectangle_11 = Rectangle(-1, 2)
-        self.rectangle_12 = Rectangle(1, -2)
-        self.rectangle_13 = Rectangle(0, 2)
-        self.rectangle_14 = Rectangle(1, 0)
-        self.rectangle_15 = Rectangle(1, 2, -3)
-        self.rectangle_16 = Rectangle(1, 2, 3, -4)
 
     def tearDown(self):
         """Tears down the setup
@@ -90,6 +80,8 @@ class TestRectangleClass(unittest.TestCase):
             self.rectangle_3.width = {}
         with self.assertRaises(TypeError):
             self.rectangle_3.width = 12.0
+        with self.assertRaises(TypeError):
+            Rectangle("1", 2)
 
     def test_rectangle_height_is_not_int(self):
         """TypeError is raised when it is not an integer
@@ -104,6 +96,8 @@ class TestRectangleClass(unittest.TestCase):
             self.rectangle_3.height = {}
         with self.assertRaises(TypeError):
             self.rectangle_3.height = 12.0
+        with self.assertRaises(TypeError):
+            Rectangle(1, "2")
 
     def test_rectangle_x_position_is_not_int(self):
         """TypeError is raised when it is not an integer
@@ -118,6 +112,8 @@ class TestRectangleClass(unittest.TestCase):
             self.rectangle_3.x = {}
         with self.assertRaises(TypeError):
             self.rectangle_3.x = 12.0
+        with self.assertRaises(TypeError):
+            Rectangle(1, 2, "3")
 
     def test_rectangle_y_position_is_not_int(self):
         """TypeError is raised when it is not an integer
@@ -132,6 +128,8 @@ class TestRectangleClass(unittest.TestCase):
             self.rectangle_3.y = {}
         with self.assertRaises(TypeError):
             self.rectangle_3.y = 12.0
+        with self.assertRaises(TypeError):
+            Rectangle(1, 2, 3, "4")
 
     def test_rectangle_width_less_or_equal_zero(self):
         """ValueError is raised when it is <= 0
@@ -142,6 +140,10 @@ class TestRectangleClass(unittest.TestCase):
             self.rectangle_2.width = -12
         with self.assertRaises(ValueError):
             self.rectangle_3.width = -32
+        with self.assertRaises(ValueError):
+            Rectangle(-1, 2)
+        with self.assertRaises(ValueError):
+            Rectangle(0, 2)
 
     def test_rectangle_height_less_or_equal_zero(self):
         """ValueError is raised when it is <= 0
@@ -152,6 +154,10 @@ class TestRectangleClass(unittest.TestCase):
             self.rectangle_2.height = -12
         with self.assertRaises(ValueError):
             self.rectangle_3.height = -32
+        with self.assertRaises(ValueError):
+            Rectangle(1, -2)
+        with self.assertRaises(ValueError):
+            Rectangle(1, 0)
 
     def test_rectangle_x_less_than_zero(self):
         """ValueError is raised when it is < 0
@@ -162,6 +168,8 @@ class TestRectangleClass(unittest.TestCase):
             self.rectangle_2.x = -12
         with self.assertRaises(ValueError):
             self.rectangle_3.x = -34
+        with self.assertRaises(ValueError):
+            Rectangle(1, 2, -3)
 
     def test_rectangle_y_less_than_zero(self):
         """ValueError is raised when it is < 0
@@ -172,6 +180,8 @@ class TestRectangleClass(unittest.TestCase):
             self.rectangle_2.y = -12
         with self.assertRaises(ValueError):
             self.rectangle_3.y = -34
+        with self.assertRaises(ValueError):
+            Rectangle(1, 2, 3, -4)
 
     def test_rectangle_area(self):
         """Test Rectangle Area
@@ -297,7 +307,7 @@ class TestRectangleClass(unittest.TestCase):
         self.assertEqual(self.rectangle_3.to_dictionary(), output_3)
 
     def test_rectangle_save_empty_list_for_None_parameter(self):
-        """Check it saves an empty file for No parameter
+        """Check it saves an empty file for None parameter
         """
         Rectangle.save_to_file(None)
 
@@ -307,7 +317,7 @@ class TestRectangleClass(unittest.TestCase):
         self.assertEqual("[]", output.strip("\n"))
 
     def test_rectangle_save_empty_list_for_empty_list_param(self):
-        """Check it saves an empty file for an empty parameter
+        """Check it saves an empty file for an empty list parameter
         """
         Rectangle.save_to_file([])
 
@@ -317,7 +327,7 @@ class TestRectangleClass(unittest.TestCase):
         self.assertEqual("[]", output.strip("\n"))
 
     def test_rectangle_save_to_file_with_appropriate_params(self):
-        """Check it saves an empty file for an empty parameter
+        """Check it saves an empty file for an appropriate parameter
         """
         r1 = Rectangle(10, 7, 2, 8, 9)
         r2 = Rectangle(2, 4, 0, 0, 10)

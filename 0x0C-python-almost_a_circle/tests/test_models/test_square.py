@@ -387,3 +387,24 @@ class TestSquareClass(unittest.TestCase):
         self.assertEqual("[{\"id\": 8, \"size\": 10, \"x\": 7, "
                          "\"y\": 2}, {\"id\": 9, \"size\": 2, \"x\": 4, "
                          "\"y\": 0}]", output.strip("\n"))
+
+    def test_square_from_json_string_method_with_none_parameter(self):
+        """Check that from_json_string returns an empty list for None Parameter
+        """
+        output = Square.from_json_string(json_string=None)
+        self.assertEqual([], output)
+
+    def test_square_from_json_string_method_with_empty_list_parameter(self):
+        """Check that from_json_string returns an empty list for None Parameter
+        """
+        output = Square.from_json_string("")
+        self.assertEqual([], output)
+
+    def test_square_from_json_string_with_appropriate_parameter(self):
+        """Check that from_json_string returns an empty list for None Parameter
+        """
+        json_input = ('[{"id": 89, "width": 10, "height": 4}, '
+                      '{"id": 7, "width": 1, "height": 7}]')
+        output = Square.from_json_string(json_input)
+        self.assertEqual([{'id': 89, 'width': 10, 'height': 4},
+                          {'id': 7, 'width': 1, 'height': 7}], output)

@@ -4,6 +4,7 @@
 import unittest
 import io
 import sys
+import os
 from models.rectangle import Rectangle
 
 
@@ -396,6 +397,15 @@ class TestRectangleClass(unittest.TestCase):
         self.assertEqual(rect_5.x, dict_5["x"])
         self.assertEqual(rect_5.y, dict_5["y"])
 
+    def test_rectangle_load_from_file_returns_empty_list(self):
+        """This test loads from a file
+        """
+        filename = "Rectangle.json"
+        os.rename(filename, "Rect.json")
+        output = Rectangle.load_from_file()
+        self.assertEqual([], output)
+        os.rename("Rect.json", filename)
+
     def test_rectangle_load_from_file_returns_instance_list(self):
         """This test loads from a file
         """
@@ -411,3 +421,37 @@ class TestRectangleClass(unittest.TestCase):
         self.assertEqual(r2.id, instance_list[1].id)
         self.assertEqual(r2.width, instance_list[1].width)
         self.assertEqual(r2.height, instance_list[1].height)
+
+    def test_rectangle_save_in_csv_empty_list_for_None_parameter(self):
+        """Check it saves in CSV format an empty file for None parameter
+        """
+        Rectangle.save_to_file_csv(None)
+
+        with open("Rectangle.csv", "r", encoding="utf-8") as csv_file:
+            output = csv_file.read()
+
+        self.assertEqual("", output.strip("\n"))
+
+    def test_rectangle_save_in_csv_empty_list_for_empty_list_param(self):
+        """Check it saves in CSV format an empty file for an empty
+        list parameter
+        """
+        Rectangle.save_to_file_csv([])
+
+        with open("Rectangle.csv", "r", encoding="utf-8") as csv_file:
+            output = csv_file.read()
+
+        self.assertEqual("", output.strip("\n"))
+
+    def test_rectangle_save_in_csv_to_file_with_appropriate_params(self):
+        """Check it saves in CSV format an empty file for an appropriate
+        parameter
+        """
+        r1 = Rectangle(10, 7, 2, 8, 9)
+        r2 = Rectangle(2, 4, 0, 0, 10)
+        Rectangle.save_to_file_csv([r1, r2])
+
+        with open("Rectangle.csv", "r", encoding="utf-8") as csv_file:
+            output = csv_file.read()
+
+        self.assertEqual("9,10,7,2,8\n10,2,4,0,0\n", output)

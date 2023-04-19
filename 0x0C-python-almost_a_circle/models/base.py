@@ -5,6 +5,8 @@ It manages the id attribute of all classes that inherits form it
 to avoid duplicating the same code
 """
 import json
+import csv
+import os
 
 
 class Base:
@@ -93,6 +95,9 @@ class Base:
         filename = cls.__name__ + ".json"
         instance_list = []
 
+        if os.path.exists(filename) is False:
+            return ([])
+
         with open(filename, "r", encoding="utf-8") as from_file:
             json_string = from_file.read()
             dict_json = Base.from_json_string(json_string.strip('\n'))
@@ -101,3 +106,24 @@ class Base:
             instance_list.append(cls.create(**item))
 
         return instance_list
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """It serialises and deserialises in csv
+        """
+        filename = cls.__name__ + ".csv"
+
+        with open(filename, "w", newline="", encoding="utf-8") as csv_file:
+            if list_objs is None or len(list_objs) == 0:
+                csv_writer = csv.writer(csv_file, delimiter=',')
+                csv_writer.writerow([])
+            else:
+                instance_list = []
+                csv_writer = csv.writer(csv_file, delimiter=',')
+                for obj in list_objs:
+                    instance_list.append(obj.to_dictionary())
+                for instance in instance_list:
+                    values = []
+                    for key, value in instance.items():
+                        values.append(value)
+                    csv_writer.writerow(values)

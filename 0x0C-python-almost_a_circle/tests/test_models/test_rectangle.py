@@ -455,3 +455,28 @@ class TestRectangleClass(unittest.TestCase):
             output = csv_file.read()
 
         self.assertEqual("9,10,7,2,8\n10,2,4,0,0\n", output)
+
+    def test_rectangle_load_from_file_csv_returns_empty_list(self):
+        """This test loads empty from a csv file
+        """
+        filename = "Rectangle.csv"
+        os.rename(filename, "Rect.csv")
+        output = Rectangle.load_from_file_csv()
+        self.assertEqual([], output)
+        os.rename("Rect.csv", filename)
+
+    def test_rectangle_load_from_file_csv_returns_instance_list(self):
+        """This test loads from a csv file
+        """
+        r1 = Rectangle(10, 7, 2, 8, 9)
+        r2 = Rectangle(2, 4, 0, 0, 10)
+
+        Rectangle.save_to_file([r1, r2])
+        instance_list = Rectangle.load_from_file_csv()
+
+        self.assertEqual(r1.id, instance_list[0].id)
+        self.assertEqual(r1.width, instance_list[0].width)
+        self.assertEqual(r1.height, instance_list[0].height)
+        self.assertEqual(r2.id, instance_list[1].id)
+        self.assertEqual(r2.width, instance_list[1].width)
+        self.assertEqual(r2.height, instance_list[1].height)

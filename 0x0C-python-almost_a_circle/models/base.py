@@ -96,7 +96,7 @@ class Base:
         instance_list = []
 
         if os.path.exists(filename) is False:
-            return ([])
+            return instance_list
 
         with open(filename, "r", encoding="utf-8") as from_file:
             json_string = from_file.read()
@@ -109,7 +109,7 @@ class Base:
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
-        """It serialises and deserialises in csv
+        """It serialises into csv format
         """
         filename = cls.__name__ + ".csv"
 
@@ -125,5 +125,25 @@ class Base:
                 for instance in instance_list:
                     values = []
                     for key, value in instance.items():
-                        values.append(value)
+                        values.append(int(value))
                     csv_writer.writerow(values)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """This deserialises from csv format
+        """
+        filename = cls.__name__ + ".csv"
+        instance_list = []
+
+        if os.path.exists(filename) is False:
+            return instance_list
+
+        with open(filename, "r", newline="", encoding="utf-8") as csv_file:
+            csv_reader = csv.reader(csv_file, delimiter=",")
+            for row in csv_reader:
+                row = tuple(map(int, row))
+                instance = cls(1, 1)
+                instance.update(*row)
+                instance_list.append(instance)
+
+        return instance_list

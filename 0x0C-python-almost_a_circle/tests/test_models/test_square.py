@@ -4,6 +4,7 @@
 import unittest
 import sys
 import io
+import os
 from models.square import Square
 
 
@@ -454,6 +455,15 @@ class TestSquareClass(unittest.TestCase):
         self.assertEqual(sqr_4.x, dict_4["x"])
         self.assertEqual(sqr_4.y, dict_4["y"])
 
+    def test_square_load_from_file_returns_empty_list(self):
+        """This test loads from a file
+        """
+        filename = "Square.json"
+        os.rename(filename, "Rect.json")
+        output = Square.load_from_file()
+        self.assertEqual([], output)
+        os.rename("Rect.json", filename)
+
     def test_square_load_from_file_returns_instance_list(self):
         """This test loads from a file for a square
         """
@@ -461,6 +471,62 @@ class TestSquareClass(unittest.TestCase):
         r2 = Square(2, 4, 0, 9)
         Square.save_to_file([r1, r2])
         instance_list = Square.load_from_file()
+
+        self.assertEqual(r1.id, instance_list[0].id)
+        self.assertEqual(r1.size, instance_list[0].size)
+        self.assertEqual(r2.id, instance_list[1].id)
+        self.assertEqual(r2.size, instance_list[1].size)
+
+    def test_square_save_in_csv_empty_list_for_None_parameter(self):
+        """Check it saves in CSV format an empty file for None parameter
+        """
+        Square.save_to_file_csv(None)
+
+        with open("Square.csv", "r", encoding="utf-8") as csv_file:
+            output = csv_file.read()
+
+        self.assertEqual("", output.strip("\n"))
+
+    def test_square_save_in_csv_empty_list_for_empty_list_param(self):
+        """Check it saves in CSV format an empty file for an empty
+        list parameter
+        """
+        Square.save_to_file_csv([])
+
+        with open("Square.csv", "r", encoding="utf-8") as csv_file:
+            output = csv_file.read()
+
+        self.assertEqual("", output.strip("\n"))
+
+    def test_square_save_in_csv_to_file_with_appropriate_params(self):
+        """Check it saves in CSV format an empty file for an appropriate
+        parameter
+        """
+        r1 = Square(10, 7, 2, 8)
+        r2 = Square(2, 4, 0, 9)
+        Square.save_to_file_csv([r1, r2])
+
+        with open("Square.csv", "r", encoding="utf-8") as csv_file:
+            output = csv_file.read()
+
+        self.assertEqual("8,10,7,2\n9,2,4,0\n", output)
+
+    def test_square_load_from_file_csv_returns_empty_list(self):
+        """This test loads from a csv file
+        """
+        filename = "Square.csv"
+        os.rename(filename, "Sqr.csv")
+        output = Square.load_from_file_csv()
+        self.assertEqual([], output)
+        os.rename("Sqr.csv", filename)
+
+    def test_square_load_from_file_csv_returns_instance_list(self):
+        """This test loads from a csv file for a square
+        """
+        r1 = Square(10, 7, 2, 8)
+        r2 = Square(2, 4, 0, 9)
+        Square.save_to_file_csv([r1, r2])
+        instance_list = Square.load_from_file_csv()
 
         self.assertEqual(r1.id, instance_list[0].id)
         self.assertEqual(r1.size, instance_list[0].size)

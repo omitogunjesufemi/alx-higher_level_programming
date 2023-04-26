@@ -7,6 +7,7 @@ to avoid duplicating the same code
 import json
 import csv
 import os
+import turtle
 
 
 class Base:
@@ -147,3 +148,45 @@ class Base:
                 instance_list.append(instance)
 
         return instance_list
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """This opens a window and draws all the Rectangles and Squares
+        """
+        screen = turtle.getscreen()
+        base_shape = turtle.Turtle()
+        base_shape.home()
+
+        for rectangle in list_rectangles:
+            base_shape.color("red", "blue")
+            base_shape.penup()
+            base_shape.pendown()
+            base_shape.begin_fill()
+            base_shape.forward(rectangle.width)
+            base_shape.right(90)
+            base_shape.forward(rectangle.height)
+            base_shape.right(90)
+            base_shape.forward(rectangle.width)
+            base_shape.right(90)
+            base_shape.forward(rectangle.height)
+            base_shape.end_fill()
+            base_shape.penup()
+            base_shape.goto(10, 10)
+
+        base_shape.home()
+        base_shape.goto(-30, -30)
+        for square in list_squares:
+            base_shape.color("yellow", "green")
+            base_shape.penup()
+            base_shape.pendown()
+            base_shape.begin_fill()
+            base_shape.forward(square.width)
+            base_shape.right(90)
+            base_shape.forward(square.height)
+            base_shape.right(90)
+            base_shape.forward(square.width)
+            base_shape.right(90)
+            base_shape.forward(square.height)
+            base_shape.end_fill()
+            base_shape.penup()
+            base_shape.goto(-30, -30)

@@ -36,3 +36,4 @@ TASK | DESCRIPTION
 `100-move_to_utf8.sql` | A script that converts hbtn_0c_0 database to UTF8 (utf8mb4, collate utf8mb4_unicode_ci) in your MySQL server
 
 `101-avg_temperatures.sql` | A script that displays the average temperature (Fahrenheit) by city ordered by temperature (descending).
+`102-top_city.sql` | A script that displays the top 3 of cities temperature during July and August ordered by temperature (descending)

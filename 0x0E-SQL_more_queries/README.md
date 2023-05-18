@@ -25,3 +25,4 @@ TASK | DESCRIPTION
 `9-cities_by_state_join.sql` | A script that lists all cities contained in the database hbtn_0d_usa.
 `10-genre_id_by_show.sql` | A script that lists all shows contained in hbtn_0d_tvshows that have at least one genre linked.
 `11-genre_id_all_shows.sql` | A script that lists all shows contained in the database hbtn_0d_tvshows.
+`12-no_genre.sql` | A script that lists all shows contained in hbtn_0d_tvshows without a genre linked

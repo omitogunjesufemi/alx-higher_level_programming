@@ -37,3 +37,4 @@ TASK | DESCRIPTION
 
 `101-avg_temperatures.sql` | A script that displays the average temperature (Fahrenheit) by city ordered by temperature (descending).
 `102-top_city.sql` | A script that displays the top 3 of cities temperature during July and August ordered by temperature (descending)
+`103-max_state.sql` | A a script that displays the max temperature of each state (ordered by State name)

@@ -34,7 +34,6 @@ TASK | DESCRIPTION
 `15-groups.sql` | A script that lists the number of records with the same score in the table second_table of the database hbtn_0c_0 in your MySQL server
 `16-no_link.sql` | A script that lists all records of the table second_table of the database hbtn_0c_0 in your MySQL server
 `100-move_to_utf8.sql` | A script that converts hbtn_0c_0 database to UTF8 (utf8mb4, collate utf8mb4_unicode_ci) in your MySQL server
-
 `101-avg_temperatures.sql` | A script that displays the average temperature (Fahrenheit) by city ordered by temperature (descending).
 `102-top_city.sql` | A script that displays the top 3 of cities temperature during July and August ordered by temperature (descending)
 `103-max_state.sql` | A a script that displays the max temperature of each state (ordered by State name)

@@ -24,3 +24,4 @@ TASK | DESCRIPTION
 `5-full_table.sql` | A script that prints the full description of a table in database
 `6-list_values.sql` | A script that lists all rows of a table from the database
 `7-insert_value.sql` | A script that inserts a new role in the table
+`8-count_89.sql` | A script that displays the number of records with a particular id from a table

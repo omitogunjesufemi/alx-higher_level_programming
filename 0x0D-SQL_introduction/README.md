@@ -23,3 +23,4 @@ TASK | DESCRIPTION
 `4-first_table.sql` | A script that creates a table called first_table in the current database in MySQL server
 `5-full_table.sql` | A script that prints the full description of a table in database
 `6-list_values.sql` | A script that lists all rows of a table from the database
+`7-insert_value.sql` | A script that inserts a new role in the table

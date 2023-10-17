@@ -17,3 +17,4 @@ The project contains the following tasks:
 TASK | DESCRIPTION
 --- | ---
 `0-list_databases.sql` | A script that lists all databases of your MySQL server
+`1-create_database_if_missing.sql` | A script that creates the database hbtn_0c_0 in the MySQL server

@@ -26,3 +26,4 @@ TASK | DESCRIPTION
 `7-insert_value.sql` | A script that inserts a new role in the table
 `8-count_89.sql` | A script that displays the number of records with a particular id from a table
 `9-full_creation.sql` | A script that creates a table in the database and add multiple rows
+`10-top_score.sql` | A script that lists all records of the table of the database

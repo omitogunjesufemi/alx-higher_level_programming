@@ -22,3 +22,4 @@ TASK | DESCRIPTION
 `3-list_tables.sql` | A script that lists all the tables of a database in your MySQL server
 `4-first_table.sql` | A script that creates a table called first_table in the current database in MySQL server
 `5-full_table.sql` | A script that prints the full description of a table in database
+`6-list_values.sql` | A script that lists all rows of a table from the database

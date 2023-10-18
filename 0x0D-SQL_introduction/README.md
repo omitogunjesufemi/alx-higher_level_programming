@@ -34,3 +34,4 @@ TASK | DESCRIPTION
 `15-groups.sql` | A script that list the umber of records with the same score in the table
 `16-no_link.sql` | A script that list all records of the table skipping rows without a name value
 `100-move_to_utf8.sql` | A script that converts hbtn_0c_0 database to UTF8
+`101-avg_temperatures.sql` | A script that displays the average temperature by city ordered by temperature in descending order

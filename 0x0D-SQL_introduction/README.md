@@ -35,3 +35,5 @@ TASK | DESCRIPTION
 `16-no_link.sql` | A script that list all records of the table skipping rows without a name value
 `100-move_to_utf8.sql` | A script that converts hbtn_0c_0 database to UTF8
 `101-avg_temperatures.sql` | A script that displays the average temperature by city ordered by temperature in descending order
+`102-top_city.sql` | A script that displays the top 3 cities temperature during July and August ordered by temperature
+`103-max_state.sql` | A script that displays the max temperature of each state order by state name

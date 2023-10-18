@@ -31,3 +31,6 @@ TASK | DESCRIPTION
 `12-no_cheating.sql` | A script that updates without id
 `13-change_class.sql` | A script that removes all records with a score <= 5 from the table to be displayed
 `14-average.sql` | A script that computes the score average of all records in the table
+`15-groups.sql` | A script that list the umber of records with the same score in the table
+`16-no_link.sql` | A script that list all records of the table skipping rows without a name value
+`100-move_to_utf8.sql` | A script that converts hbtn_0c_0 database to UTF8

@@ -29,3 +29,5 @@ TASK | DESCRIPTION
 `10-top_score.sql` | A script that lists all records of the table of the database
 `11-best_store.sql` | A script that lists all records with a score >= 10
 `12-no_cheating.sql` | A script that updates without id
+`13-change_class.sql` | A script that removes all records with a score <= 5 from the table to be displayed
+`14-average.sql` | A script that computes the score average of all records in the table

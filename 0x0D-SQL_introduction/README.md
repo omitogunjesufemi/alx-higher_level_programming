@@ -27,3 +27,5 @@ TASK | DESCRIPTION
 `8-count_89.sql` | A script that displays the number of records with a particular id from a table
 `9-full_creation.sql` | A script that creates a table in the database and add multiple rows
 `10-top_score.sql` | A script that lists all records of the table of the database
+`11-best_store.sql` | A script that lists all records with a score >= 10
+`12-no_cheating.sql` | A script that updates without id

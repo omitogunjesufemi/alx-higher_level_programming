@@ -1,0 +1,7 @@
+#!/bin/bash
+
+touch $1
+chmod +x $1
+echo "#!/usr/bin/node" >> $1
+echo "\`$1\` | $2" >> README.md
+emacs -nw $1

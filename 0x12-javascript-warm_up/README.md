@@ -1,0 +1,12 @@
+# 0x12. JavaScript - Warm up
+This project helped to understand:
+- Wy JavaScript programming is amazing
+- How to run a JavaScript script
+- How to create variables and constants
+- What are differences between `var`, `const` and `let`
+- What are all the data types available in JavaScript
+
+This project consist of the following tasks:
+TASK | DESCRIPTION
+--- | ---
+`0-javascript_is_amazing.js` | A script that prints JavaScript is amazing

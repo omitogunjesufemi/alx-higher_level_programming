@@ -16,3 +16,4 @@ TASK | DESCRIPTION
 `4-concat.js` | A script that prints two arguments passed to it
 `5-to_integer.js` | A script that prints My number: <first argument converted in integer>
 `6-multi_languages_loop.js` | A script that prints 3 lines: (like 1-multi_languages.js) but by using an array of string and a loop
+`7-multi_c.js` | A script that prints x times C is fun

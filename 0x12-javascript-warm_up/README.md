@@ -25,3 +25,4 @@ TASK | DESCRIPTION
 `13-add.js` | A function that returns the addition of 2 integers
 `100-let_me_const.js` | A file that modifies the value of myVar to 333
 `101-call_me_moby.js` | A function that executes x times a function
+`102-add_me_maybe.js` | A function that increments and calls a function

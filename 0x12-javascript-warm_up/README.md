@@ -22,3 +22,4 @@ TASK | DESCRIPTION
 `10-factorial.js` | A script that computes and prints a factorial
 `11-second_biggest.js` | A script that searches the second biggest integer in the list of arguments
 `12-object.js` | A script to replace value in an object
+`13-add.js` | A function that returns the addition of 2 integers

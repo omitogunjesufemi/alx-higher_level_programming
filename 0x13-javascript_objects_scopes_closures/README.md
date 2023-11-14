@@ -16,3 +16,4 @@ TASK | DESCRIPTION
 `1-rectangle.js` | Defines a rectangle with a constructor taking 2 arguments
 `2-rectangle.js` | Define a class with constructor using setter and getters
 `3-rectangle.js` | Rectangle definition with instance method print()
+`4-rectangle.js` | Rectangle Definition with rotate() and double() method

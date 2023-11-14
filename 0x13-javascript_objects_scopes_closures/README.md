@@ -15,3 +15,4 @@ TASK | DESCRIPTION
 `0-rectangle.js` | An empty class that defines a rectangle
 `1-rectangle.js` | Defines a rectangle with a constructor taking 2 arguments
 `2-rectangle.js` | Define a class with constructor using setter and getters
+`3-rectangle.js` | Rectangle definition with instance method print()

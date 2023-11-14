@@ -19,3 +19,4 @@ TASK | DESCRIPTION
 `4-rectangle.js` | Rectangle Definition with rotate() and double() method
 `5-square.js` | Square class definition that inherits from Rectangle of 4-rectangle.js
 `6-square.js` | Define a Square class with charPrint(c) method that prints using character c
+`7-occurrences.js` | Returns the number of occurrences in a list

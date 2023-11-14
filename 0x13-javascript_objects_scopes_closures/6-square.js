@@ -13,7 +13,7 @@ class Square extends SquareParent {
       c = 'X';
     }
     for (let i = 0; i < this.size; i++) {
-      console.log(c.repeat(this.size));
+      console.log(String(c).repeat(this.size));
     }
   }
 }

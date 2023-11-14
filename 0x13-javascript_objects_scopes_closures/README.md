@@ -13,3 +13,4 @@ This project consist of the following tasks:
 TASK | DESCRIPTION
 --- | ---
 `0-rectangle.js` | An empty class that defines a rectangle
+`1-rectangle.js` | Defines a rectangle with a constructor taking 2 arguments

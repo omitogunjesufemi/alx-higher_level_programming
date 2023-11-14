@@ -23,3 +23,4 @@ TASK | DESCRIPTION
 `11-second_biggest.js` | A script that searches the second biggest integer in the list of arguments
 `12-object.js` | A script to replace value in an object
 `13-add.js` | A function that returns the addition of 2 integers
+`100-let_me_const.js` | A file that modifies the value of myVar to 333

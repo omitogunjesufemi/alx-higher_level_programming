@@ -19,3 +19,4 @@ TASK | DESCRIPTION
 `7-multi_c.js` | A script that prints x times C is fun
 `8-square.js` | A script that prints a square
 `9-add.js` | A script that prints the addition of 2 integers
+`10-factorial.js` | A script that computes and prints a factorial

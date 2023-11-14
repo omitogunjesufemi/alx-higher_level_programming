@@ -17,3 +17,4 @@ TASK | DESCRIPTION
 `2-rectangle.js` | Define a class with constructor using setter and getters
 `3-rectangle.js` | Rectangle definition with instance method print()
 `4-rectangle.js` | Rectangle Definition with rotate() and double() method
+`5-square.js` | Square class definition that inherits from Rectangle of 4-rectangle.js

@@ -23,3 +23,4 @@ TASK | DESCRIPTION
 `8-esrever.js` | A function that returns the reversed version of a list
 `9-logme.js` | Prints the number of arguments already printed and the new argument value
 `100-map.js` | Script that imports an array and computes a new array
+`101-sorted.js` | Script that imports a dictionary of occurences by user id and computes a dictionary of user ids by occurence

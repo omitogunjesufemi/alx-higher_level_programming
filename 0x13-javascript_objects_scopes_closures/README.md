@@ -22,3 +22,4 @@ TASK | DESCRIPTION
 `7-occurrences.js` | Returns the number of occurrences in a list
 `8-esrever.js` | A function that returns the reversed version of a list
 `9-logme.js` | Prints the number of arguments already printed and the new argument value
+`100-map.js` | Script that imports an array and computes a new array

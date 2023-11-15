@@ -20,3 +20,4 @@ TASK | DESCRIPTION
 `5-square.js` | Square class definition that inherits from Rectangle of 4-rectangle.js
 `6-square.js` | Define a Square class with charPrint(c) method that prints using character c
 `7-occurrences.js` | Returns the number of occurrences in a list
+`8-esrever.js` | A function that returns the reversed version of a list

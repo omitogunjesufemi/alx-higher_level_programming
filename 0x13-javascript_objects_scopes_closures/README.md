@@ -21,3 +21,4 @@ TASK | DESCRIPTION
 `6-square.js` | Define a Square class with charPrint(c) method that prints using character c
 `7-occurrences.js` | Returns the number of occurrences in a list
 `8-esrever.js` | A function that returns the reversed version of a list
+`9-logme.js` | Prints the number of arguments already printed and the new argument value

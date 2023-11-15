@@ -25,3 +25,4 @@ TASK | DESCRIPTION
 `100-map.js` | Script that imports an array and computes a new array
 `101-sorted.js` | Script that imports a dictionary of occurences by user id and computes a dictionary of user ids by occurence
 `10-converter.js` | Converts a number from base 10 to another base passed as argument
+`102-concat.js` | A script that concats 2 files

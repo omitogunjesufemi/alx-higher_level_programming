@@ -17,3 +17,4 @@ TASKS | DESCRIPTION
 --- | ---
 `0-select_states.py` | A script that lists all states from the database
 `1-filter_states.py` | Script that lists all states with a name starting with N from the database
+`2-my_filter_states.py` | A script that takes in an argument and display all values in the states table where name matches the argument

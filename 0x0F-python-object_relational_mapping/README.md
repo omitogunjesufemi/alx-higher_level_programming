@@ -25,3 +25,4 @@ TASKS | DESCRIPTION
 `7-model_state_fetch_all.py` | A script that lists all State objects from the database
 `8-model_state_fetch_first.py` | A script that prints the first State object from the database
 `9-model_state_filter_a.py` | Lists all State objects that contain the letter a from the database
+`10-model_state_my_get.py` | A script that prints the State object with the name pass as argument from the database

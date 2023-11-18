@@ -21,3 +21,4 @@ TASKS | DESCRIPTION
 `3-my_safe_filter_states.py` | A script that takes in argument and displays all values in states table of database when it matches an argument with MySQL injections
 `4-cities_by_state.py` | A script that lists all cities from the database
 `5-filter_cities.py` | A script that takes in the name of a state as an argument and lists all cities of that state using database
+`model_state.py` | A python file that contains the class definition of a State and an instance Base class

@@ -1,0 +1,8 @@
+# ignore all virtual environment file
+venv/
+
+# ignore pycache
+__pycache__/
+
+# set up file
+sh

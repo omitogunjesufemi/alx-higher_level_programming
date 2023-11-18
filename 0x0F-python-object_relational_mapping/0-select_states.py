@@ -6,21 +6,21 @@
 import MySQLdb
 import sys
 
+
 def main():
     """This prevents the module from executing when imported as a module
     """
     db = MySQLdb.connect(
         host="localhost",
-        user="root",
+        user=f"{sys.argv[1]}",
         port=3306,
-        passwd="password",
-        db="hbtn_0e_0_usa")
+        passwd=f"{sys.argv[2]}",
+        db=f"{sys.argv[3]}")
     cur = db.cursor()
-    count = cur.execute("""SELECT * FROM states ORDER BY states.id ASC""")
-    i = 0
-    while (i < count):
-        print(cur.fetchone())
-        i += 1
+    cur.execute("""SELECT * FROM states ORDER BY states.id ASC""")
+    rows = cur.fetchall()
+    for row in rows:
+        print(row)
     cur.close()
     db.close()
 

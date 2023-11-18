@@ -15,4 +15,5 @@ This project helped to understand:
 The project consist of the following tasks:
 TASKS | DESCRIPTION
 --- | ---
-\ | A script that lists all states from the database
+`0-select_states.py` | A script that lists all states from the database
+`1-filter_states.py` | Script that lists all states with a name starting with N from the database

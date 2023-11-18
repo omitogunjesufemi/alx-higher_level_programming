@@ -5,12 +5,17 @@
 """
 import MySQLdb
 
-db = MySQLdb.connect(host="localhost", user="root", port=3306,
+def main():
+    db = MySQLdb.connect(host="localhost", user="root", port=3306,
                      passwd="password", db="hbtn_0e_0_usa")
-cur = db.cursor()
-count = cur.execute("""SELECT * FROM states ORDER BY states.id ASC""")
-i = 0
+    cur = db.cursor()
+    count = cur.execute("""SELECT * FROM states ORDER BY states.id ASC""")
+    i = 0
 
-while (i < count):
-    print(cur.fetchone())
-    i += 1
+    while (i < count):
+        print(cur.fetchone())
+        i += 1
+
+
+if __name__ == "__main__":
+    main()

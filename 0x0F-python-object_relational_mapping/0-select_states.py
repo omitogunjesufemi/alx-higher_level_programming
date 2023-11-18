@@ -4,20 +4,23 @@
    It uses the MySQLdb module
 """
 import MySQLdb
+import sys
 
 def main():
-    db = MySQLdb.connect(host="localhost", user="root", port=3306,
-                     passwd="password", db="hbtn_0e_0_usa")
+    """This prevents the module from executing when imported as a module
+    """
+    db = MySQLdb.connect(
+        host="localhost",
+        user="root",
+        port=3306,
+        passwd="password",
+        db="hbtn_0e_0_usa")
     cur = db.cursor()
-    try:
-        count = cur.execute("""SELECT * FROM states ORDER BY states.id ASC""")
-        i = 0
-        while (i < count):
-            print(cur.fetchone())
-            i += 1
-    except e:
-        pass
-
+    count = cur.execute("""SELECT * FROM states ORDER BY states.id ASC""")
+    i = 0
+    while (i < count):
+        print(cur.fetchone())
+        i += 1
     cur.close()
     db.close()
 

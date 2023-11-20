@@ -26,16 +26,20 @@ def main():
     WHERE cities.state_id = states.id
     AND states.name = %s
     ORDER BY cities.id ASC"""
-    count = cur.execute(query, (state_name, ))
-    rows = cur.fetchall()
 
-    i = 0
-    for row in rows:
-        if i == count - 1:
-            print(row[0])
-        else:
-            print(row[0], end=", ")
-        i += 1
+    try:
+        count = cur.execute(query, (state_name, ))
+        rows = cur.fetchall()
+
+        i = 0
+        for row in rows:
+            if i == count - 1:
+                print(row[0])
+            else:
+                print(row[0], end=", ")
+            i += 1
+    except Exception as e:
+        pass
 
     cur.close()
     db.close()

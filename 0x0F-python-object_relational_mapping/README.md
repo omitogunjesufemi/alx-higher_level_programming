@@ -31,3 +31,6 @@ TASKS | DESCRIPTION
 `13-model_state_delete_a.py` | A script that deletes all State objects with a name containing the letter a from the database
 `model_city.py` | City Class Definition
 `14-model_city_fetch_by_state.py` | A script that prints all City objects from the database
+`relationship_city.py` | Create a data model for City Class
+`relationship_state.py` | Adding a relationship link with City objects
+`100-relationship_states_cities.py` | A script that creates the State: California with the City San Francisco from the database

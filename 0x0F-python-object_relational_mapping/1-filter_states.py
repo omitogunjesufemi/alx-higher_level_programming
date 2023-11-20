@@ -15,9 +15,10 @@ def main():
         db=f"{sys.argv[3]}")
     cur = db.cursor()
     query = """
-    SELECT * FROM states WHERE states.name LIKE 'N%' ORDER BY states.id ASC
+    SELECT * FROM states
+    WHERE BINARY states.name LIKE N'N%'
+    ORDER BY states.id ASC
     """
-
     try:
         cur.execute(query)
         rows = cur.fetchall()

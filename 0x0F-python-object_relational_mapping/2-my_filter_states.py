@@ -17,7 +17,7 @@ def main():
         port=3306)
     cur = db.cursor()
     query = """SELECT * FROM states
-    WHERE states.name = \'{}\'
+    WHERE BINARY states.name = \'{}\'
     ORDER BY states.id ASC""".format(sys.argv[4])
 
     try:

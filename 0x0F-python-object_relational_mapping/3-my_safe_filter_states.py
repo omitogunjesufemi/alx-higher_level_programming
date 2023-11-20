@@ -21,10 +21,14 @@ def main():
     query = """SELECT * FROM states
     WHERE states.name = %s
     ORDER BY states.id ASC"""
-    cur.execute(query, (sys.argv[4], ))
-    rows = cur.fetchall()
-    for row in rows:
-        print(row)
+
+    try:
+        cur.execute(query, (sys.argv[4], ))
+        rows = cur.fetchall()
+        for row in rows:
+            print(row)
+    except Exception as e:
+        pass
 
 
 if __name__ == "__main__":

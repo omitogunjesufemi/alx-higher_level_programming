@@ -17,10 +17,14 @@ def main():
     query = """
     SELECT * FROM states WHERE states.name LIKE 'N%' ORDER BY states.id ASC
     """
-    cur.execute(query)
-    rows = cur.fetchall()
-    for row in rows:
-        print(row)
+
+    try:
+        cur.execute(query)
+        rows = cur.fetchall()
+        for row in rows:
+            print(row)
+    except Exception as e:
+        pass
 
     cur.close()
     db.close()

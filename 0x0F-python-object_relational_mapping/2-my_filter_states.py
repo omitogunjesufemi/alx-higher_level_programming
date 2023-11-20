@@ -19,10 +19,14 @@ def main():
     query = """SELECT * FROM states
     WHERE states.name = \'{}\'
     ORDER BY states.id ASC""".format(sys.argv[4])
-    cur.execute(query)
-    rows = cur.fetchall()
-    for row in rows:
-        print(row)
+
+    try:
+        cur.execute(query)
+        rows = cur.fetchall()
+        for row in rows:
+            print(row)
+    except Exception as e:
+        pass
 
     cur.close()
     db.close()

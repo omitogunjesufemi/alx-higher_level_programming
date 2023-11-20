@@ -34,3 +34,4 @@ TASKS | DESCRIPTION
 `relationship_city.py` | Create a data model for City Class
 `relationship_state.py` | Adding a relationship link with City objects
 `100-relationship_states_cities.py` | A script that creates the State: California with the City San Francisco from the database
+`101-relationship_states_cities_list.py` | A script that lists all State objects, and corresponding City bjects, contained in the database

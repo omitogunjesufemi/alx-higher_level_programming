@@ -32,6 +32,8 @@ def main():
         rows = cur.fetchall()
 
         i = 0
+        if count == 0:
+            print()
         for row in rows:
             if i == count - 1:
                 print(row[0])

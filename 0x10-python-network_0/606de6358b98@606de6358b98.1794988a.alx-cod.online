@@ -1,5 +1,0 @@
-#!/bin/bash
-# A script that displays size of the body of the response
-
-curl -s $1;
-echo ""

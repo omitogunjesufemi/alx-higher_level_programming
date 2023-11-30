@@ -24,3 +24,4 @@ TASK | DESCRIPTION
 `0-body_size.sh` | A script that displays size of the body of the response
 `1-body.sh` | Sends a GET request to URL and display body of response
 `2-delete.sh` | Script that sends a DELETE request to the URL and displays the body of the response
+`3-methods.sh` | Script takes URL displays all HTTP methods the server will accept

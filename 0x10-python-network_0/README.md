@@ -25,3 +25,4 @@ TASK | DESCRIPTION
 `1-body.sh` | Sends a GET request to URL and display body of response
 `2-delete.sh` | Script that sends a DELETE request to the URL and displays the body of the response
 `3-methods.sh` | Script takes URL displays all HTTP methods the server will accept
+`4-header.sh` | Script that take URL with header variable, display body of response

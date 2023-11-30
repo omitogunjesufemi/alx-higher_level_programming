@@ -27,3 +27,4 @@ TASK | DESCRIPTION
 `3-methods.sh` | Script takes URL displays all HTTP methods the server will accept
 `4-header.sh` | Script that take URL with header variable, display body of response
 `5-post_params.sh` | Script that sends POST request to the passed URL, display body of response
+`100-status_code.sh` | Script sends a request to a URL and display only the status code of the response

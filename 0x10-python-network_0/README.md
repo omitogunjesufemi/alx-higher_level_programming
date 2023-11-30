@@ -22,3 +22,4 @@ The following tasks where in the project:
 TASK | DESCRIPTION
 --- | ---
 `0-body_size.sh` | A script that displays size of the body of the response
+`1-body.sh` | Sends a GET request to URL and display body of response

@@ -3,10 +3,11 @@
 """
 from urllib.request import urlopen
 
-url = "https://alx-intranet.hbtn.io/status"
-with urlopen(url) as response:
-    body = response.read()
-    decode = body.decode('utf8')
+if __name__ == "__main__":
+    url = "https://alx-intranet.hbtn.io/status"
+    with urlopen(url) as response:
+        body = response.read()
+        decode = body.decode('utf8')
     print(f"""Body response:
     - type: {type(body)}
     - content: {body}

@@ -2,6 +2,6 @@
 touch $1
 chmod +x $1
 echo "#!/usr/bin/python3" > $1
-echo '$2' >> $1
+echo "$2" >> $1
 echo "\`$1\` | $2" >> README.md
 emacs -nw $1

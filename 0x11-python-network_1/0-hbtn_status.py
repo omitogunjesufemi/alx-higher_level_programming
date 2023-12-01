@@ -8,6 +8,6 @@ with urlopen(url) as response:
     body = response.read()
     decode = body.decode('utf8')
     print(f"""Body response:
-    \t- type: {type(body)}
-    \t- content: {body}
-    \t- utf8 content: {decode}""")
+    - type: {type(body)}
+    - content: {body}
+    - utf8 content: {decode}""")

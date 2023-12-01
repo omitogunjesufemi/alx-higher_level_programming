@@ -11,3 +11,4 @@ This project helped to understand the following:
 The following tasks where in the project:
 TASK | DESCRIPTION
 --- | ---
+`0-hbtn_status.py` | Script fetches https://alx-intranet.hbtn.io/status

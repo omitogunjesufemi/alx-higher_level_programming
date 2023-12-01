@@ -15,4 +15,4 @@ if __name__ == "__main__":
     res = requests.get(url, headers=headers)
     body = eval(res.content.decode()
                 .replace('false', 'False').replace('null', 'None'))
-    print(body['id'])
+    print(body.get('id'))

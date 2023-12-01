@@ -4,12 +4,13 @@ the body of the response. If the HTTP status code is greater than or equal to
 400, print: Error code: followed by the value of the HTTP status code
 """
 import sys
-import request
+import requests
 
 
 if __name__ == "__main__":
     try:
-        res = request.get(sys.argv[1])
+        res = requests.get(sys.argv[1])
+        res.raise_for_status()
         print(res.text)
-    except request.HTTPError as er:
-        print(f"Error code: {er.code}")
+    except requests.HTTPError as er:
+        print(f"Error code: {er.response.status_code}")

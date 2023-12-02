@@ -29,3 +29,4 @@ TASK | DESCRIPTION
 `5-post_params.sh` | Script that sends POST request to the passed URL, display body of response
 `100-status_code.sh` | Script sends a request to a URL and display only the status code of the response
 `101-post_json.sh` | script that sends a JSON POST request to a URL and displays the body of the response
+`102-catch_me.sh` | Bash script that makes a request to 0.0.0.0:5000/catch_me that causes the server to respond with a message containing You got me!

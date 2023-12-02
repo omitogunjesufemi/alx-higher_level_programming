@@ -8,7 +8,7 @@ if __name__ == "__main__":
     with urlopen(url) as response:
         body = response.read()
         decode = body.decode('utf8')
-    print(f"""Body response:
-    - type: {type(body)}
-    - content: {body}
-    - utf8 content: {decode}""")
+    print("Body response:")
+    print(f"\t- type: {type(body)}")
+    print(f"\t- content: {body}")
+    print(f"\t- utf8 content: {decode}")

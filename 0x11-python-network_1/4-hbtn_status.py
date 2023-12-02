@@ -6,6 +6,6 @@ import requests
 
 res = requests.get("https://alx-intranet.hbtn.io/status")
 body = res.text
-print(f"""Body response:
-    - type: {type(body)}
-    - content: {body}""")
+print("Body response:")
+print(f"\t- type: {type(body)}")
+print(f"\t- content: {body}")

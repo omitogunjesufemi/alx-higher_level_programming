@@ -11,11 +11,9 @@ if __name__ == "__main__":
     headers = {"Accept": "application/vnd.github+json",
                "X-GitHub-Api-Version": "2022-11-28"}
     res = requests.get(url, headers=headers)
-    body = eval(res.content.decode()
-                .replace('false', 'False')
-                .replace('true', 'True')
-                .replace('null', 'None'))
+    body = res.json()
     commits = body[:10]
     for commit in commits:
-        print("{}: {}".format(commit['sha'],
-                              commit['commit']['author']['name']))
+        print("{}: {}".format(commit.get('sha'),
+                              commit.get('commit')
+                              .get('author').get('name')))

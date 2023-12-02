@@ -13,6 +13,5 @@ if __name__ == "__main__":
                "X-GitHub-Api-Version": "2022-11-28",
                "Authorization": f"Bearer {token}"}
     res = requests.get(url, headers=headers)
-    body = eval(res.content.decode()
-                .replace('false', 'False').replace('null', 'None'))
+    body = res.json()
     print(body.get('id'))

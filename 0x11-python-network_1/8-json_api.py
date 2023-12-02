@@ -14,7 +14,7 @@ if __name__ == "__main__":
         q = sys.argv[1]
         url = "http://0.0.0.0:5000/search_user"
         res = requests.post(url, data={'q': q})
-        output = eval(res.content)
+        output = res.json()
         if type(output) is not dict:
             print("Not a valid JSON")
         if len(output) == 0:

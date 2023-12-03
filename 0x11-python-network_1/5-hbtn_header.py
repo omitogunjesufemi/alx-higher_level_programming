@@ -12,4 +12,4 @@ if __name__ == "__main__":
         header = res.headers["X-Request-Id"]
         print(header)
     except:
-        pass
+        return None

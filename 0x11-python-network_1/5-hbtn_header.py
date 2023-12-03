@@ -11,5 +11,5 @@ if __name__ == "__main__":
     try:
         header = res.headers["X-Request-Id"]
         print(header)
-    except:
+    except KeyError as e:
         return None

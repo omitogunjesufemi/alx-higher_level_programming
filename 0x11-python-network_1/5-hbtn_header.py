@@ -8,4 +8,8 @@ import sys
 
 if __name__ == "__main__":
     res = requests.get(sys.argv[1])
-    print(res.get_headers("X-Request-Id"))
+    try:
+        header = res.headers["X-Request-Id"]
+        print(header)
+    except:
+        pass

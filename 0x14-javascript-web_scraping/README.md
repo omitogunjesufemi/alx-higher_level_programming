@@ -11,3 +11,4 @@ TASK | DESCRIPTION
 --- | ---
 `0-readme.js` | A script that reads and prints the content of a file
 `1-writeme.js` | A script that writes a string to a file
+`2-statuscode.js` | Script that display the status code of a GET request

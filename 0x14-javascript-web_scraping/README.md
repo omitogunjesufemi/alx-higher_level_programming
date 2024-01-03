@@ -10,3 +10,4 @@ This project consist of the following tasks:
 TASK | DESCRIPTION
 --- | ---
 `0-readme.js` | A script that reads and prints the content of a file
+`1-writeme.js` | A script that writes a string to a file

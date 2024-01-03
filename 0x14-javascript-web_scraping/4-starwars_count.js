@@ -5,7 +5,7 @@ const url = process.argv[2];
 
 const characters = [];
 request(url, (error, response, body) => {
-  if (error) console.log(error);
+  if (error) return;
   const allFilms = JSON.parse(body);
 
   if (allFilms.results.length === 0) return;

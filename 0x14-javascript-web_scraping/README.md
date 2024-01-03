@@ -16,3 +16,4 @@ TASK | DESCRIPTION
 `4-starwars_count.js` | script that prints the number of movies where the character “Wedge Antilles” is present
 `5-request_store.js` | Script that gets the contents of a webpage and stores it in a file
 `6-completed_tasks.js` | Script that computes the number of tasks completed by userId
+`100-starwars_characters.js` | Script that prints all characters of a Star Wars movie

@@ -17,3 +17,4 @@ TASK | DESCRIPTION
 `5-request_store.js` | Script that gets the contents of a webpage and stores it in a file
 `6-completed_tasks.js` | Script that computes the number of tasks completed by userId
 `100-starwars_characters.js` | Script that prints all characters of a Star Wars movie
+`101-starwars_characters.js` | script that prints all characters of a Star Wars movie in the order stored in the api response

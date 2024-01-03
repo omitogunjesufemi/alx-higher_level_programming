@@ -13,3 +13,4 @@ TASK | DESCRIPTION
 `1-writeme.js` | A script that writes a string to a file
 `2-statuscode.js` | Script that display the status code of a GET request
 `3-starwars_title.js` | Script that prints the title Start Wars movies where the episode number matches a given integer
+`4-starwars_count.js` | script that prints the number of movies where the character “Wedge Antilles” is present

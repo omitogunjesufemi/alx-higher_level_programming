@@ -3,18 +3,26 @@ const request = require('request');
 const movieId = process.argv[2];
 const url = `https://swapi-api.alx-tools.com/api/films/${movieId}`;
 
-request(url, (error, response, body) => {
-  if (error) return;
+request(url, (err, resp, bdy) => {
+  if (err) return;
 
-  const movie = JSON.parse(body);
+  const movie = JSON.parse(bdy);
   const characters = movie.characters;
-  let i = 0;
-  while (i < characters.length) {
-    request(characters[i], (err, resp, bdy) => {
-      if (err) return;
-      const character = JSON.parse(bdy);
-      console.log(character.name);
+
+  const fetchCharacterData = (cUrl) => {
+    request(cUrl, (cErr, cResp, cBody) => {
+      if (cErr) {
+        console.log(cErr);
+      } else {
+        const characterName = JSON.parse(cBody);
+        console.log(characterName.name);
+
+        const nextChar = characters.shift();
+        if (nextChar) fetchCharacterData(nextChar);
+      }
     });
-    i++;
-  }
+  };
+
+  const firstChar = characters.shift();
+  if (firstChar) fetchCharacterData(firstChar);
 });

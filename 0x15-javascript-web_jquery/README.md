@@ -18,3 +18,4 @@ TASKS | DESCRIPTION
 `1-script.js` | JavaScript script that updates the text color of the <header> element to red (#FF0000) with jQuery API
 `2-script.js` | JavaScript script that updates the text color of the <header> element to red (#FF0000) when the user clicks on the tag `div#red_header`
 `3-script.js` | JavaScript script that adds the class red to the <header> element when the user clicks on the tag DIV#red_header
+`4-script.js` | JavaScript script that toggles the class of the <header> element when the user clicks on the tag DIV#toggle_header

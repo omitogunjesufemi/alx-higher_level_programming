@@ -15,3 +15,4 @@ The project consist of the following tasks:
 TASKS | DESCRIPTION
 --- | ---
 `0-script.js` | JavaScript script that updates the text color of the <header> element to red (#FF0000)
+`1-script.js` | JavaScript script that updates the text color of the <header> element to red (#FF0000) with jQuery API
